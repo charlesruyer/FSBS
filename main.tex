@@ -127,7 +127,6 @@ In a 2D system ($D=1$), Fig. \ref{fig:akin} illustrates, for $D=1$ and for  a H$
 
 
 \subsection{Derivation of an effective growth rate relevant for an  RPP beam}
-
  \begin{widetext}
 We may now combine the kinetic plasma response  with the paraxial model of  the laser propagation. 
 However, it  is easier at this stage to introduce $\Bar{E}$ with  $E=\Bar{E}\exp(-i \mathbf{k}^2x /2k_0)$ so that Eq. \eqref{eq:parax} becomes
@@ -136,23 +135,21 @@ However, it  is easier at this stage to introduce $\Bar{E}$ with  $E=\Bar{E}\exp
 \end{equation}
  plugged in Eq. \eqref{eq:drakef}, we obtain
 \begin{align}
-    &\partial_x \Bar{E}  =\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e} \times \nonumber \\
-   & \int \frac{d^Dk_s}{(2\pi)^D}  e^{ \frac{-i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}} \Bar{E}(\mathbf{k}-\mathbf{k}_s) 
-   [I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) +
-   I_p(\mathbf{k}_s) \beta_\mathrm{r}   (\mathbf{k}_s) ] \, ,  \label{eq:paraxbar}
+    \partial_x \Bar{E}  =\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e}
+    %\times \nonumber \\
+    \int \frac{d^Dk_s}{(2\pi)^D}  e^{ \frac{-i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}} \Bar{E}(\mathbf{k}-\mathbf{k}_s) 
+   I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) \, ,  \label{eq:paraxbar}
 \end{align}
 where we introduced $\alpha_\mathrm{r}=\Re(\alpha_\mathrm{kin} )$ and $\beta_r$. 
 
 %\onecolumngrid
- When retaining only the first order terms (like $E_d$ and $I_d$, $I_p$ and $E_p$ are considered of order zero), we obtain 
+ When retaining only the first order terms (as $E_d$ and $I_d$, $I_p$ and $E_p$ are considered of order zero), we obtain 
  \begin{align}
    e^{-i\omega_s t}\partial_x \Bar{E}_d  =\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e} \times 
    \int \frac{d^Dk_s}{(2\pi)^D} 
    e^{ \frac{-i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}
-   [
    I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) \Bar{E}_p(\mathbf{k}-\mathbf{k}_s) 
-   + I_p(\mathbf{k}_s) \beta_\mathrm{r}   (\mathbf{k}_s) \Bar{E}_d(\mathbf{k}-\mathbf{k}_s) e^{-i\omega_st}
-   ]\, .  \label{eq:paraxbar}
+   \, .  \label{eq:paraxbar}
 \end{align}
 
 In order to shade light on the dependence of the diffusion growth on the laser energy scattering direction, one needs to combine the above relation with the definition of $I_d(\mathbf{k})$ of  Eqs. \eqref{eq:ip}-\eqref{eq:id}, which can be recast as,
@@ -172,12 +169,9 @@ The  use of Eq. \eqref{eq:paraxbar} yields,
 \begin{align}
 \partial_xI_d(\mathbf{k}_d)\simeq &\Re\Big( \frac{ik_0n_0}{4n_c} \frac{c\epsilon_0 }{  v_g n_c T_e}   \int d^Dk \int \frac{d^Dk_s}{(2\pi)^D} \Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k})
 e^{\frac{-i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0} }
-e^{\frac{i(\mathbf{k}_d-\mathbf{k})^2x}{2k_0} } \nonumber \\
-&\times [I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
+e^{\frac{i(\mathbf{k}_d-\mathbf{k})^2x}{2k_0} }
+I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
 \Bar{E}_p(\mathbf{k}-\mathbf{k}_s) 
-+I_p(\mathbf{k}_s) \beta_\mathrm{r}(\mathbf{k}_s) 
-\Bar{E}_d(\mathbf{k}-\mathbf{k}_s) e^{-i\omega_s(\mathbf{k}-\mathbf{k}_s)t}
-] \
  \Big) \nonumber\\
 & +c\epsilon_0  \Re\left( \int d^Dk e^{-i\omega_s t+\frac{ i( \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k} )x}{2k_0}} 
 i\frac{  \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k}}{2k_0} \Bar{E}_d(\mathbf{k})\Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k} )
@@ -186,7 +180,7 @@ i\frac{  \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k}}{2k_0} \Bar{E}_d(\mathbf{k
 \end{align}
 We may now use Eqs. \eqref{eq:idb} and  \eqref{eq:ipb}, 
 \begin{align}
-\partial_xI_d(\mathbf{k}_d)\simeq \Re\Big( \frac{ik_0n_0}{4n_c} \frac{1 }{  v_g n_c T_e}    \int \frac{d^Dk_s}{(2\pi)^D} I_d(\mathbf{k}_s) (\alpha_\mathrm{r}(\mathbf{k}_s) +2\beta_r)
+\partial_xI_d(\mathbf{k}_d)\simeq \Re\Big( \frac{ik_0n_0}{4n_c} \frac{1 }{  v_g n_c T_e}    \int \frac{d^Dk_s}{(2\pi)^D} I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s)
 I_p(\mathbf{k}_d-\mathbf{k}_s)
 +\frac{i\mathbf{k}_d^2}{2k_0} I_d \Big) 
   \nonumber\\
@@ -214,7 +208,7 @@ e^{\frac{i\mathbf{k}_s^2x}{2k_0}}
      where $H$ is the step function, $k_m=k_0/2f$ with $f$ the effective speckle focal number,  and $\sigma$ the transverse size of the pump wave, \emph{i.e.}, $I_0\sigma^D$ is its initial power.
   \begin{align}
 \partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0n_0}{2n_c} \frac{e^{\frac{-i\mathbf{k}_d^2x}{2k_0}} }{  v_g n_c T_e}   
- I_0\sigma^D \int_{k_d-2k_m}^{k_d+2k_m} \frac{d^Dk_s}{(2\pi)^D} \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
+ I_0\sigma^D \int \frac{d^Dk_s}{(2\pi)^D}   \mathcal{H}^{(D)}(\mathbf{k}_s) \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
 e^{\frac{i\mathbf{k}_s^2x}{2k_0}} 
 \, . \label{eq:g4}
 \end{align}
@@ -235,43 +229,56 @@ In order to reach analytical progress, we will assume that $I_d$ is  smoother an
 e^{\frac{i(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}} 
 \, . \label{eq:g6}
 \end{align}
- \end{widetext}
  
-An exact and general solution of \eqref{eq:g6} is out of the scope of this manuscript, however, we extract from it some general tendencies such as the averaged growth rate of the energy associated with $I_d$, and the dominant direction in which the pump is scattered. The real part of  Eq. \eqref{eq:g6} leads to the real effective  grain defined following
-\begin{align}
-&g(\mathbf{k}_d,x) = \Re\left[\frac{\partial_x\Bar{I}_d(\mathbf{k}_d)}{\Bar{I}_d(0)}\right] \nonumber \\
-&=  \frac{k_0}{2}  \frac{\delta n}{n_c}
- \mathcal{H}^{(D)}(\mathbf{k}_d)  \sigma^D \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-\sin\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}\right]
-\, . \label{eq:gainkd}
-\end{align}
- 
- \begin{figure}
-\begin{tabular}{c}
-(a) $D=1$ \\
-\includegraphics[width=0.49\textwidth]{int_akin_sin.eps}\\
-(b) $D=2$ \\
+  \begin{figure*}
+\begin{tabular}{cc}
+(a) $D=1$ &(b) $D=2$ \\
+\includegraphics[width=0.49\textwidth]{int_akin_sin.eps}
+ &
 \includegraphics[width=0.49\textwidth]{int_akin_sin_D2.eps}
 \end{tabular}
 \caption{ \label{fig:intakinsin}
 Numerical evaluation of the averaged real gain given by Eq. \eqref{eq:gain0} for various values of $ZT_e/T_i$ in the case $D=1$ (a) and $D=2$ (b) as plain lines for $\sigma = 200 \,\mu m$. The linearization around the focal plane, $x=0$, is superimposed in dashed lines. 
  }
-\end{figure}
-Hence, the averaged gain can be obtained setting $\mathbf{k}_d=0$ while the averaged spectral width may be obtained through an integration after
+\end{figure*}
+An exact and general solution of \eqref{eq:g6} is out of the scope of this manuscript, however, we extract from it some general tendencies such as the averaged growth rate of the energy associated with $I_d$, and the dominant direction in which the pump is scattered. The real part of  Eq. \eqref{eq:g6} leads to the real effective  gain defined following
 \begin{align}
-g(0,x)=  \frac{k_0}{2}  \frac{\delta n}{n_c}
-  \sigma^D \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-\sin\left[ \frac{\mathbf{k}_s^2 x}{2k_0}\right]
-\, . \label{eq:gain0}
+&g(\mathbf{k}_d,x) = \Re\left[\frac{\partial_x\Bar{I}_d(\mathbf{k}_d)}{\Bar{I}_d(0)}\right] %\nonumber \\
+%&
+= - \frac{k_0}{2}  \frac{\delta n}{n_c}
+ \mathcal{H}^{(D)}(\mathbf{k}_d)  \sigma^D \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
+\sin\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}\right]
+\, . \label{eq:gainkd}
+\end{align}
+ \end{widetext}
+
+Hence, the averaged gain can be obtained setting $\mathbf{k}_d=0$,
+\begin{align}
+g(0,x)&=  -\Gamma_0 \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
+\sin\left[ \frac{\mathbf{k}_s^2 x}{2k_0}\right]\, , \nonumber\\
+\Gamma_0&=\frac{k_0}{2}  \frac{\delta n}{n_c}
+  \sigma^D \, ,
+\label{eq:gain0}
 \end{align}
 Figures \ref{fig:intakinsin}(a,b) illustrate, as a function of $k_m^2 x /k_0$, the evolution of $g(0,x)$
-normalized to $k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
+normalized to $\Gamma_0=k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
 The averaged energy gain of the diffused wave is positive before focus (\emph{i.e.} $x=0$) and negative afterward, with  a linear behavior of the $g(0,x)$ for  $\vert k_m^2 x /k_0 \vert < 100$  that very weakly depends on $ZT_e/T_i$.  Indeed, as shown in Fig \ref{fig:akin}(c), $\alpha_r^{(2)}$ exhibits no dependence  on $ZT_e/T_i$. Both cases $D=1$ and $2$ present a weaker dependence of $g(0,x)$ on $\vert k_m^2 x /k_0 \vert > 100$, it occurs when the $\sin(k^2x/2k_0)$ in the quadrature of Eq. \eqref{eq:gain0} varies faster than the plateau width of $\alpha_r$, $\vert k_s/k_0\vert \lesssim 5\cdot 10^{-3}\equiv \Delta k /2$ in Figs. \ref{fig:akin}(a,b), \emph{i.e.} for $\vert x\vert \gtrsim k_0/\Delta k^2$ which gives $\vert k_m^2x/k_0 \vert  \gtrsim 60  $ in fair  agreement with Figs. \ref{fig:intakinsin}(a,b).
 For $\vert k_m^2 x /k_0 \vert \gtrsim 400$, the absolute value of $g(0,x)$ vanishes faster as $ZT_e/T_i$ decreases. 
 
-Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $g(0,x)/(k_0\sigma \delta n /2n_c) \sim 2\cdot 10^3$ before focus (for $-600< k_m^2 x/k_0 < -200$) so that, for  a propagation of $\Delta x = 2\,\rm mm$, the net gain is $g(0,x)\Delta x\simeq 2.5 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $g(0,x)\Delta x\simeq 50 $, thus yielding substantial growth.
+Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $g(0,x)/\Gamma_0 \gtrsim 3\cdot 10^3$ before focus (for $200< k_m^2 x/k_0 < 600$) so that, for  a propagation of $\Delta x = 2\,\rm mm$ (\emph{i.e.} $k_m^2 \Delta x/k_0 = 200$), the net gain is $g(0,x)\Delta x\gtrsim 3.5 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $g(0,x)\Delta x\gtrsim 70 $, thus yielding substantial growth for both $D=1$ and $2$.
+
+We therefore know that the Forward Brillouin may grow significantly in the plasmas  of interest here and, in order to shade light on the scattered  direction of the pump wave, we will now address the spectral behavior of Eq. \eqref{eq:gainkd}.
 
 \subsection{Angular spread through Forward Brillouin scattering}
+
+Introducing $x_0$, the left boundary of our system, we may now the solution of Eq. \eqref{eq:gainkd}, 
+\begin{align}
+\partial_x\Bar{I}_d &=\Gamma_0 K  \mathcal{H}^{(D)}(\mathbf{k}_d) g(0,x)
+e^{\Gamma_0 G(0,x)-\frac{i\mathbf{k}_d^2 }{2k_0}} \, ,\nonumber\\
+G(0,x)&=\int_{x_0}^{x}g(0,x) dx \, , \label{eq:dxidkd}
+\end{align}
+where $K$ is an integration constant. 
+
 The averaged spectral width, $\Delta k$ or opening angle $\Delta k/k_0 $ may be derived from  
  \begin{align}
  \Delta k ^2(x) = \frac{\int  d^Dk \mathbf{k}^2 g(\mathbf{k},x )}{\int  d^Dk  g(\mathbf{k},x )}\, ,
@@ -287,26 +294,47 @@ which reads
  }\, .
 \end{align}
 Here also, we will make use of the much larger width of $\mathcal{H}^{(D)}(\mathbf{k})$ ($\sim 4k_m = 2k_0/f$) compared to $\alpha_r$ ($\sim 10^{-2}k_0$, see Fig. \ref{fig:akin}).
-We may thus use a Taylor developments in $k_s$ of the above quadratures thus using, for $D=1$
-
+We may thus apply a Taylor developments in $k_s$ to  the above quadratures thus using, for $D=1$
  \begin{widetext}
 \begin{align}
- \int_{-2k_m}^{2k_m}  dk  k^2 \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &\simeq \frac{4k_mk_0}{x}\cos\left(\frac{x 4k_m^2}{2k_0}\right) - \frac{2k_0}{x} \sqrt{\frac{\pi k_0}{x}} \mathrm{C}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
+ \int_{-2k_m}^{2k_m}  dk  k^2 \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &= -\frac{4k_mk_0}{x}\cos\left(\frac{ 2k_m^2x}{k_0}\right) + \frac{2k_0}{x} \sqrt{\frac{\pi k_0}{x}} \mathrm{C}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
  + O(k_s^2)\, . \\ 
- \int_{-2k_m}^{2k_m}  dk  \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &\simeq 
- -\sqrt{\frac{\pi k_0}{x}} \mathrm{S}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
+ \int_{-2k_m}^{2k_m}  dk  \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &= 
+ \sqrt{\frac{4\pi k_0}{x}} \mathrm{S}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
   + O(k_s^2)\, . 
 \end{align}
 and for $D=2$
 \begin{align}
- \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  (k_y^2+k_z^2) \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right] =  
+ \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  (k_y^2+k_z^2) \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right]& =  
+ \frac{4\pi k_0^2}{x^2} \left[ \sin\left( \frac{ 2k_m^2 x}{k_0} \right) -\frac{ 2k_m^2x}{k_0}\cos\left( \frac{ 2k_m^2x}{k_0}\right) \right]
  + O(\mathbf{k}_s^2)\, , \\
- \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right] = 
+ \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right] &= 
+ \frac{4\pi k_0}{x}\sin^2 \left( \frac{ k_m^2x}{k_0}\right)
   + O(\mathbf{k}_s^2)\, ,
 \end{align}
- where $\mathrm{S}$ and $\mathrm{C}$ are the Fresnel S and C integral. 
- 
+ where $\mathrm{S}$ and $\mathrm{C}$ are the Fresnel S and C integrals. 
  \end{widetext}
+ 
+ Hence, the angular spread of the diffused wave resulting from FSBS,  can be approximated to 
+  \begin{align}
+ \Delta k ^2(x) = \frac{
+ \frac{k_0}{x}  \mathrm{C}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
+ -\frac{2k_m}{\pi}\sqrt{\frac{\pi k_0}{x}}\cos\left(\frac{ 2k_m^2x}{k_0}\right)
+ }{
+ \mathrm{S}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
+ }\, ,
+\end{align}
+for $D=1$ and to 
+\begin{align}
+ \Delta k ^2(x) =  \frac{ k_0}{x} \frac{
+ \left[ \sin\left( \frac{ 2k_m^2 x}{k_0} \right) -\frac{ 2k_m^2x}{k_0}\cos\left( \frac{ 2k_m^2x}{k_0}\right) \right]
+ }{
+\sin^2 \left( \frac{ k_m^2x}{k_0}\right)
+ }\, ,
+\end{align}
+for $D=2$.
+
+
 \section*{Acknowledgements}
  \textcolor{red}{We acknowledge important discussion with M. Grech.  
  We also acknowledge D. Dureau and the HERA-team for all their work on the HERA code. }
