@@ -13,7 +13,7 @@
 \usepackage{amssymb}			
 \usepackage{latexsym}		
 \usepackage{color}
-
+\usepackage{ stmaryrd }
 \begin{document}
 
 \title{Impact of Forward stimulated Brillouin scattering on the propagation of a nanosecond-class and energetic laser pulse}
@@ -115,7 +115,7 @@ Note that the term inside the real part only depends on $k_s$:   a summation of 
 \begin{tabular}{c}
 (a) $D=1$\\
 \includegraphics[width=0.49\textwidth]{akin.eps}\\
-(b) $D=2$\\
+(b) $D=2$, $ZT_3/T_i=3$\\
 \includegraphics[width=0.49\textwidth]{real_F_kin_3d_vd0cs_te1keV_Ti300eV_H+.png}\\
 (c) $\alpha_r^{(n)}$ for  $D=1$\\
 \end{tabular}
@@ -230,7 +230,7 @@ e^{\frac{i(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}}
 \, . \label{eq:g6}
 \end{align}
  
-  \begin{figure*}
+ \begin{figure*}
 \begin{tabular}{cc}
 (a) $D=1$ &(b) $D=2$ \\
 \includegraphics[width=0.49\textwidth]{int_akin_sin.eps}
@@ -241,35 +241,36 @@ e^{\frac{i(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}}
 Numerical evaluation of the averaged real gain given by Eq. \eqref{eq:gain0} for various values of $ZT_e/T_i$ in the case $D=1$ (a) and $D=2$ (b) as plain lines for $\sigma = 200 \,\mu m$. The linearization around the focal plane, $x=0$, is superimposed in dashed lines. 
  }
 \end{figure*}
-An exact and general solution of \eqref{eq:g6} is out of the scope of this manuscript, however, we extract from it some general tendencies such as the averaged growth rate of the energy associated with $I_d$, and the dominant direction in which the pump is scattered. The real part of  Eq. \eqref{eq:g6} leads to the real effective  gain defined following
+An exact and general solution of \eqref{eq:g6} is out of the scope of this manuscript, however, we extract from it some general tendencies such as the averaged growth rate of the energy associated with $I_d$, and the dominant direction in which the pump is scattered. A complex gain can be extracted from  Eq. \eqref{eq:g6}
 \begin{align}
-&g(\mathbf{k}_d,x) = \Re\left[\frac{\partial_x\Bar{I}_d(\mathbf{k}_d)}{\Bar{I}_d(0)}\right] %\nonumber \\
+&g(\mathbf{k}_d,x) = \frac{\partial_x\Bar{I}_d(\mathbf{k}_d)}{\Bar{I}_d(0)} %\nonumber \\
 %&
-= - \frac{k_0}{2}  \frac{\delta n}{n_c}
+=  \frac{k_0}{2}  \frac{\delta n}{n_c}
  \mathcal{H}^{(D)}(\mathbf{k}_d)  \sigma^D \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-\sin\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}\right]
+i\exp\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}\right]
 \, . \label{eq:gainkd}
 \end{align}
  \end{widetext}
-
-Hence, the averaged gain can be obtained setting $\mathbf{k}_d=0$,
+Hence, the averaged complex gain can be obtained setting $\mathbf{k}_d=0$,
 \begin{align}
-g(0,x)&=  -\Gamma_0 \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-\sin\left[ \frac{\mathbf{k}_s^2 x}{2k_0}\right]\, , \nonumber\\
+g(0,x)&=  \Gamma_0 \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
+i\exp\left[ \frac{\mathbf{k}_s^2 x}{2k_0}\right]\, , \nonumber\\
 \Gamma_0&=\frac{k_0}{2}  \frac{\delta n}{n_c}
   \sigma^D \, ,
 \label{eq:gain0}
 \end{align}
-Figures \ref{fig:intakinsin}(a,b) illustrate, as a function of $k_m^2 x /k_0$, the evolution of $g(0,x)$
-normalized to $\Gamma_0=k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
-The averaged energy gain of the diffused wave is positive before focus (\emph{i.e.} $x=0$) and negative afterward, with  a linear behavior of the $g(0,x)$ for  $\vert k_m^2 x /k_0 \vert < 100$  that very weakly depends on $ZT_e/T_i$.  Indeed, as shown in Fig \ref{fig:akin}(c), $\alpha_r^{(2)}$ exhibits no dependence  on $ZT_e/T_i$. Both cases $D=1$ and $2$ present a weaker dependence of $g(0,x)$ on $\vert k_m^2 x /k_0 \vert > 100$, it occurs when the $\sin(k^2x/2k_0)$ in the quadrature of Eq. \eqref{eq:gain0} varies faster than the plateau width of $\alpha_r$, $\vert k_s/k_0\vert \lesssim 5\cdot 10^{-3}\equiv \Delta k /2$ in Figs. \ref{fig:akin}(a,b), \emph{i.e.} for $\vert x\vert \gtrsim k_0/\Delta k^2$ which gives $\vert k_m^2x/k_0 \vert  \gtrsim 60  $ in fair  agreement with Figs. \ref{fig:intakinsin}(a,b).
-For $\vert k_m^2 x /k_0 \vert \gtrsim 400$, the absolute value of $g(0,x)$ vanishes faster as $ZT_e/T_i$ decreases. 
+which real part corresponds to the overall energy exchange between the pump and diffused wave.
 
-Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $g(0,x)/\Gamma_0 \gtrsim 3\cdot 10^3$ before focus (for $200< k_m^2 x/k_0 < 600$) so that, for  a propagation of $\Delta x = 2\,\rm mm$ (\emph{i.e.} $k_m^2 \Delta x/k_0 = 200$), the net gain is $g(0,x)\Delta x\gtrsim 3.5 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $g(0,x)\Delta x\gtrsim 70 $, thus yielding substantial growth for both $D=1$ and $2$.
+Figures \ref{fig:intakinsin}(a,b) illustrate, as a function of $k_m^2 x /k_0$, the evolution of $\Re[g(0,x)]$
+normalized to $\Gamma_0=k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
+The averaged energy gain of the diffused wave is positive before focus (\emph{i.e.} $x=0$) and negative afterward, with  a linear behavior of the $\Re[g(0,x)]$ for  $\vert k_m^2 x /k_0 \vert < 100$  that very weakly depends on $ZT_e/T_i$.  Indeed, as shown in Fig \ref{fig:akin}(c), $\alpha_r^{(2)}$ exhibits no dependence  on $ZT_e/T_i$. Both cases $D=1$ and $2$ present a weaker dependence of $g(0,x)$ on $\vert k_m^2 x /k_0 \vert > 100$, it occurs when the $\sin(k^2x/2k_0)$ in the quadrature of Eq. \eqref{eq:gain0} varies faster than the plateau width of $\alpha_r$, $\vert k_s/k_0\vert \lesssim 5\cdot 10^{-3}\equiv \Delta k /2$ in Figs. \ref{fig:akin}(a,b), \emph{i.e.} for $\vert x\vert \gtrsim k_0/\Delta k^2$ which gives $\vert k_m^2x/k_0 \vert  \gtrsim 60  $ in fair  agreement with Figs. \ref{fig:intakinsin}(a,b).
+For $\vert k_m^2 x /k_0 \vert \gtrsim 400$, the absolute value of $\Re[g(0,x)]$ vanishes faster as $ZT_e/T_i$ decreases. 
+
+Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $\Re[g(0,x)]/\Gamma_0 \gtrsim 3\cdot 10^3$ before focus (for $200< k_m^2 x/k_0 < 600$) so that, for  a propagation of $\Delta x = 2\,\rm mm$ (\emph{i.e.} $k_m^2 \Delta x/k_0 = 200$), the net gain is $\Re[g(0,x)]\Delta x\gtrsim 3.5 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $\Re[g(0,x)]\Delta x\gtrsim 70 $, thus yielding substantial growth for both $D=1$ and $2$.
 
 We therefore know that the Forward Brillouin may grow significantly in the plasmas  of interest here and, in order to shade light on the scattered  direction of the pump wave, we will now address the spectral behavior of Eq. \eqref{eq:gainkd}.
 
-\subsection{Angular spread through Forward Brillouin scattering}
+\subsection{Angular denpendence of the  Forward Brillouin scattering}
 
 Introducing $x_0$, the left boundary of our system, we may now the solution of Eq. \eqref{eq:gainkd}, 
 \begin{align}
@@ -278,61 +279,53 @@ e^{\Gamma_0 G(0,x)-\frac{i\mathbf{k}_d^2 }{2k_0}} \, ,\nonumber\\
 G(0,x)&=\int_{x_0}^{x}g(0,x) dx \, , \label{eq:dxidkd}
 \end{align}
 where $K$ is an integration constant. 
+For $G=G_r+iG_i$ and $g=\vert g \vert \exp(i\theta_g)$, we thus have
+\begin{align}
+\partial_x I_d \simeq K\Gamma_0 \mathcal{H}^{(D)}(\mathbf{k}_d)  e^{\Gamma_0 G_r} \vert g \vert \cos\left( \Gamma_0 G_i +\theta_g-\frac{\mathbf{k}_d^2 x }{2k_0} \right) \, . \label{eq:dxidkdf}
+\end{align} 
+The above equation shows that, if $\vert k_{y/z}\vert <2k_m$, some modes may be amplified ($\partial_x I_d>0$) or damped ($\partial_x I_d<0$) depending on the sign of the cosine argument that depend on $\mathbf{k}_d$ and $x$ through the diffraction term, $\mathbf{k}_d^2 x/2k_0$, and $\Gamma_0 G_i(x)+ \theta_g(x)$. 
+The growth is thus maximized for $\mathbf{k}_d=\mathbf{k}_n$ with $\Gamma_0 G_i+ \theta_g-\mathbf{k}_n^2 x /2k_0 = 2n\pi$ and where $n$ is a signed integer.
+\begin{figure}
+\begin{tabular}{cc}
+\includegraphics[width=0.49\textwidth]{gkx_2d_2mm.png}
+\end{tabular}
+\caption{ \label{fig:gxk}
+Value of $\partial_x I_d /K\Gamma_0$ following Eq. \eqref{eq:dxidkdf} for $D=1$ as a function of $k_m^2x/k_0$ and $k_d/k_m$ for $\Gamma_0=1.2$ and for   $k_m^2x_0/k_0 = -210$. 
+ }
+\end{figure}
+Regarding the region before focus ($x<0$), we now search for all the  modes that are amplified at a given position, \emph{i.e.} that fulfills $\vert k_{n,y/z}\vert <2k_m$. 
+The maximum integer, $N_\mathrm{max}(x)$, ensue from setting  $k_n=2k_m$,
+\begin{equation}\label{eq:nx}
+    N_\mathrm{max} = \left\vert  \Gamma_0 G_i +\theta_g+2\frac{k_m^2 \vert x \vert  }{k_0}  \right\vert \, . 
+\end{equation}
+The minimization regarding $n$ of  $\mathbf{k}_n^2 \vert x\vert  /2k_0 = 2n\pi-\Gamma_0 G_i- \theta_g$ leads to  the minimum integer, $N_\mathrm{min}(x)$, which verifies
+\begin{equation}\label{eq:nx}
+    N_\mathrm{min} =  \left\lfloor\frac{\Gamma_0 G_i+ \theta_g}{2\pi}\right\rfloor+1\, ,
+\end{equation}
+where $\lfloor x  \rfloor$ is the floor function.
+The wavevectors that maximizes the growth therefore verifies,
+for $n\in  \llbracket -N_\mathrm{max} ,-N_\mathrm{min} \rrbracket   \cup \llbracket N_\mathrm{min} ,N_\mathrm{max} \rrbracket$, 
+\begin{equation}\label{eq:nx}
+    \mathbf{k}_n^2 =\frac{4\pi k_0}{x} \left(n- \frac{\Gamma_0 G_i +\theta_g}{2\pi}   \right) \, .
+\end{equation}
+For these wavevectors, the growth of the scattered intensity is identical, depending soleley on the position $x$, 
+\begin{align}
+\partial_x I_d(\mathbf{k}_n) = K\Gamma_0   e^{\Gamma_0 G_r(x)} \vert g(x) \vert \, . \label{eq:dxidkn}
+\end{align} 
 
-The averaged spectral width, $\Delta k$ or opening angle $\Delta k/k_0 $ may be derived from  
- \begin{align}
- \Delta k ^2(x) = \frac{\int  d^Dk \mathbf{k}^2 g(\mathbf{k},x )}{\int  d^Dk  g(\mathbf{k},x )}\, ,
-\end{align}
-which reads 
- \begin{align}
- \Delta k ^2(x) = \frac{
-  \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
- \int  d^Dk \mathcal{H}^{(D)}(\mathbf{k})\mathbf{k}^2 \sin\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}^2)x}{2k_0}\right]
- }{
-  \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-\int  d^Dk\mathcal{H}^{(D)}(\mathbf{k})\sin\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}^2)x}{2k_0}\right]
- }\, .
-\end{align}
-Here also, we will make use of the much larger width of $\mathcal{H}^{(D)}(\mathbf{k})$ ($\sim 4k_m = 2k_0/f$) compared to $\alpha_r$ ($\sim 10^{-2}k_0$, see Fig. \ref{fig:akin}).
-We may thus apply a Taylor developments in $k_s$ to  the above quadratures thus using, for $D=1$
- \begin{widetext}
-\begin{align}
- \int_{-2k_m}^{2k_m}  dk  k^2 \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &= -\frac{4k_mk_0}{x}\cos\left(\frac{ 2k_m^2x}{k_0}\right) + \frac{2k_0}{x} \sqrt{\frac{\pi k_0}{x}} \mathrm{C}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
- + O(k_s^2)\, . \\ 
- \int_{-2k_m}^{2k_m}  dk  \sin\left[ \frac{ (k^2-k_s^2)x}{2k_0}\right] &= 
- \sqrt{\frac{4\pi k_0}{x}} \mathrm{S}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
-  + O(k_s^2)\, . 
-\end{align}
-and for $D=2$
-\begin{align}
- \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  (k_y^2+k_z^2) \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right]& =  
- \frac{4\pi k_0^2}{x^2} \left[ \sin\left( \frac{ 2k_m^2 x}{k_0} \right) -\frac{ 2k_m^2x}{k_0}\cos\left( \frac{ 2k_m^2x}{k_0}\right) \right]
- + O(\mathbf{k}_s^2)\, , \\
- \int_{-2k_m}^{2k_m}  dk_y  \int_{-2k_m}^{2k_m}  dk_z  \sin\left[ \frac{(k_y^2+k_z^2 -\mathbf{k}_s^2) x}{2k_0}\right] &= 
- \frac{4\pi k_0}{x}\sin^2 \left( \frac{ k_m^2x}{k_0}\right)
-  + O(\mathbf{k}_s^2)\, ,
-\end{align}
- where $\mathrm{S}$ and $\mathrm{C}$ are the Fresnel S and C integrals. 
- \end{widetext}
- 
- Hence, the angular spread of the diffused wave resulting from FSBS,  can be approximated to 
-  \begin{align}
- \Delta k ^2(x) = \frac{
- \frac{k_0}{x}  \mathrm{C}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
- -\frac{2k_m}{\pi}\sqrt{\frac{\pi k_0}{x}}\cos\left(\frac{ 2k_m^2x}{k_0}\right)
- }{
- \mathrm{S}\left( \sqrt{\frac{x}{\pi k_0}}  2k_m \right)
- }\, ,
-\end{align}
-for $D=1$ and to 
-\begin{align}
- \Delta k ^2(x) =  \frac{ k_0}{x} \frac{
- \left[ \sin\left( \frac{ 2k_m^2 x}{k_0} \right) -\frac{ 2k_m^2x}{k_0}\cos\left( \frac{ 2k_m^2x}{k_0}\right) \right]
- }{
-\sin^2 \left( \frac{ k_m^2x}{k_0}\right)
- }\, ,
-\end{align}
-for $D=2$.
+%The spectral width $\Delta k$ (or angular spread $\Delta \theta \simeq \Delta k/k_0$)  follows 
+%\begin{equation}\label{eq:nx}
+%    \Delta k^2  =\frac{1}{ N_\mathrm{max} -N_\mathrm{min}+1 }\sum_{n=N_\mathrm{min}}^{N_\mathrm{max}} k_n^2  \, .
+%\end{equation}
+
+%Hence,
+%\begin{align}
+%I_d(\mathbf{k}_d) &=  K  \mathcal{H}^{(D)}(\mathbf{k}_d) \Re\left[e^{\Gamma_0 G(0,x)}-e^{\Gamma_0 G(0,x_0)}\right]\nonumber\\
+%&- K  \mathcal{H}^{(D)}(\mathbf{k}_d)\frac{\mathbf{k}_d^2}{2k_0}\int_{x_0}^x dz\Re\left[ e^{\Gamma_0 G(0,z)+i\frac{\mathbf{k}_d^2}{2k_0} (x-z)}\right]
+%\, , \label{eq:idkd}
+%\end{align}
+
+%The averaged spectral width, $\Delta k$ or opening angle $\Delta k/k_0 $ may be derived from  
 
 
 \section*{Acknowledgements}
