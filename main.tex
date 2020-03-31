@@ -86,9 +86,9 @@ For a given set of $k_p$, $k_s$, $\omega_p$ and $\omega_s$, Eq. (12) of  Ref. \c
 \begin{align}
  \frac{ \delta n (\omega_s, k_p,k_s) }{n}  &=   \frac{ -\epsilon_0 E_p(k_p) E_d^\star(k_p-k_s) }{ 4 n_c T_e } \nonumber \\  &\times \alpha_\mathrm{kin}\left(\frac{\omega_s- \mathbf{k}_s\cdot \mathbf{v}_d}{\vert \mathbf{k}_s \vert }\right)   \, ,\label{eq:drake}
  \end{align}
- where, for an electron Debye length $\lambda_{De}$ that verifies $\vert k_s \lambda_{De} \vert \ll 1$, %in the case of only one transverse direction ($D=1$), 
+ where, for an ion Debye length $\lambda_{Di}$ that verifies $\vert k_s \lambda_{Di} \vert \ll 1$, %in the case of only one transverse direction ($D=1$), 
  \begin{align}
-\alpha_\mathrm{kin} &=  \frac{-1}{2}\frac{ \mathcal{Z}'( \xi_e)\mathcal{Z}'( \xi_i)    }{   \mathcal{Z}'( \xi_i) - \mathcal{Z}'( \xi_e)\frac{  T_i }{ ZT_e } }    \, , \label{eq:drakea}\\
+\alpha_\mathrm{kin} &=  \frac{-1}{2}\frac{ \mathcal{Z}'( \xi_e)\mathcal{Z}'( \xi_i)    }{   \mathcal{Z}'( \xi_i) + \mathcal{Z}'( \xi_e)\frac{  T_i }{ ZT_e } }    \, , \label{eq:drakea}\\
 \xi_{e/i } &=  \sqrt{ \frac{ m_{e/i } }{ 2T_{e/i }}  } \left( \frac{ -\vert \mathbf{k}_s\vert c^2  }{  2\omega_0 }  - \frac{    \mathbf{k}_s \cdot \mathbf{v}_d }{  \vert \mathbf{k}_s\vert }\right)  \label{eq:xiie}   \,  .
 %\xi_{e/i } &=  \sqrt{ \frac{ m_{e/i } }{ 2T_{e/i }}  } \left( \frac{ -\vert \mathbf{k}_s\vert c^2  }{  2\omega_0 }+\frac{  2\mathbf{k}_{p,\perp}\cdot \mathbf{k}_sc^2 }{  2\vert k_s \vert \omega_0 }  - \frac{    \mathbf{k}_s \cdot \mathbf{v}_d }{  \vert \mathbf{k}_s\vert }\right)  \label{eq:xiie}   \,  .
 \end{align}
@@ -101,30 +101,30 @@ In order to be combined with the paraxial description of light propagation of Eq
 
 We may now use $\alpha_\mathrm{kin}(-x) = \alpha^\star_\mathrm{kin}(x) $ to recast the above formula as 
 \begin{align}
-\frac{ \delta n (t,k_p,k_s ) }{n}  &=   \frac{ -\epsilon_0 E_p(k_p) E_d^\star(k_p-k_s)  }{ 2 v_g n_c T_e } 
- \Re \left[ \alpha_\mathrm{kin}  e^{ i\omega_s(k_s) t} \right]  \, .\label{eq:drakef}
+\frac{ \delta n (t,\mathbf{k}_p,\mathbf{k}_s ) }{n}  &=   \frac{ -\epsilon_0 E_p(\mathbf{k}_p) E_d^\star(\mathbf{k}_p-\mathbf{k}_s)  }{ 2 v_g n_c T_e } 
+ \Re \left[ \alpha_\mathrm{kin}  e^{ i\omega_s(\mathbf{k}_s) t} \right]  \, .\label{eq:drakef}
 \end{align}
 
 Note that the term inside the real part only depends on $k_s$:   a summation of the above relation over $k_p$ results, using Eq. \eqref{eq:id}, in  
 \begin{align}
-\frac{ \delta n (t,k_s ) }{n}  &=   \frac{ -I_d(k_s) }{ 2 v_g n_c T_e } 
- \Re \left( \alpha_\mathrm{kin}   \right)  \, .\label{eq:drakef}
+\frac{ \delta n (t,\mathbf{k}_s ) }{n}  &=   \frac{ -I_d(\mathbf{k}_s) }{ 2 v_g n_c T_e } 
+ \Re \left( \alpha_\mathrm{kin}   \right)  + \mathcal{N}(t,\mathbf{k}_s)\, .\label{eq:drakef}
 \end{align}
-
+We added to the above equation a seed term, $\mathcal{N}$, that could either come from thermal fluctuations or from an not fully controlled plasma initial condition.  
 \begin{figure}
 \begin{tabular}{c}
 (a) $D=1$\\
 \includegraphics[width=0.49\textwidth]{akin.eps}\\
-(b) $D=2$, $ZT_3/T_i=3$\\
-\includegraphics[width=0.49\textwidth]{real_F_kin_3d_vd0cs_te1keV_Ti300eV_H+.png}\\
-(c) $\alpha_r^{(n)}$ for  $D=1$\\
+(b) $D=2$, $T_e=1$ keV, $ZT_e/T_i=3$\\
+\includegraphics[width=0.49\textwidth]{akinD2.png}
 \end{tabular}
 \caption{ \label{fig:akin}  
  $\Re \left( \alpha_\mathrm{kin}   \right)$ for $D=1$ (a) and $D=2$ (b) as function of $k_s/k_0$ for a H$^{+}$ plasma with $n_0=0.1n_c$, $T_e =1$ keV for various $ZT_e/T_i$. 
  }
 \end{figure}
-In a 2D system ($D=1$), Fig. \ref{fig:akin} illustrates, for $D=1$ and for  a H$^{+}$ plasma with $n_0=0.1n_c$ and  $T_e =1$ keV, that $\Re \left( \alpha_\mathrm{kin}   \right)$ is an even function  of $k_s/k_0$ of width that enlarges as  $ZT_e/T_i$ increases. Moreover, its value vanishes for $\vert k_s/k_0 \vert  \gtrsim 2 \cdot 10^{-2}$, showing that the plasma is sensitive  to the very large wavelength perturbations ($\lambda_s/\lambda_0=k_0/k_s\gtrsim 314 $ or $k_s/k_0\lesssim 0.02$). As there is, in  the system of interest here no privileged scattering direction, both stokes and antistokes plasma response modes have to be taken into account [see Eq. \eqref{eq:sa}]. Hence,  the resulting diffraction pattern  in the case of FSBS is  a stationary  wave, unlike CBET where it is fully propagating.
-
+In a 2D system ($D=1$), Fig. \ref{fig:akin} illustrates, for $D=1$ and for  a H$^{+}$ plasma with $n_0=0.1n_c$ and  $T_e =1$ keV, that $\Re \left( \alpha_\mathrm{kin}   \right)$ is an even function  of $k_s/k_0$ of width that enlarges as  $T_e$ increases. Moreover, its value vanishes for $\vert k_s/k_0 \vert  \gtrsim 2 \cdot 10^{-2}$, showing that the plasma is sensitive  to the very large wavelength perturbations ($\lambda_s/\lambda_0=k_0/k_s\gtrsim 314 $ or $k_s/k_0\lesssim 0.02$).
+\textcolor{red}{Asymmetry 2D 3D.}
+As there is, in  the system of interest here no privileged scattering direction, both stokes and antistokes plasma response modes have to be taken into account [see Eq. \eqref{eq:sa}]. Hence,  the resulting diffraction pattern  in the case of FSBS is  a stationary  wave, unlike CBET where it is fully propagating.
 
 \subsection{Derivation of an effective growth rate relevant for an  RPP beam}
  \begin{widetext}
@@ -138,24 +138,34 @@ However, it  is easier at this stage to introduce $\Bar{E}$ with  $E=\Bar{E}\exp
     \partial_x \Bar{E}  =\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e}
     %\times \nonumber \\
     \int \frac{d^Dk_s}{(2\pi)^D}  e^{ \frac{i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}} \Bar{E}^\star(\mathbf{k}-\mathbf{k}_s) 
-   I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) \, ,  \label{eq:paraxbar}
+   I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) 
+   -\frac{ik_0n_0}{2n_c} e^{\frac{i\mathbf{k}^2x }{2k_0}}\int \frac{d^Dk_s}{(2\pi)^D} \mathcal{N}(\mathbf{k}_s) \Bar{E}^\star(\mathbf{k}-\mathbf{k}_s) e^{ \frac{i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}\, ,  \label{eq:paraxbar}
 \end{align}
 where we introduced $\alpha_\mathrm{r}=\Re(\alpha_\mathrm{kin} )$ and $\beta_r$. 
 
 %\onecolumngrid
- When retaining only the first order terms (as $E_d$ and $I_d$, $I_p$ and $E_p$ are considered of order zero), we obtain 
+ When retaining only the first order terms (as $E_d$, $I_d$ and $\mathcal{N}$; $I_p$ and $E_p$ are considered of order zero), we obtain 
  \begin{align}
-   e^{-i\omega_s t}\partial_x \Bar{E}_d  =\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e} \times 
+   e^{-i\omega_s t}\partial_x \Bar{E}_d  =&\frac{ik_0n_0}{4n_c} \frac{e^{\frac{i\mathbf{k}^2 x}{2k_0}}}{  v_g n_c T_e} \times 
    \int \frac{d^Dk_s}{(2\pi)^D} 
    e^{ \frac{i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}
-   I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) \Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s) 
+   I_d(\mathbf{k}_s) \alpha_\mathrm{r}   (\mathbf{k}_s) \Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s) \nonumber\\
+    &-\frac{ik_0n_0}{2n_c} e^{\frac{i\mathbf{k}^2x }{2k_0}}\int \frac{d^Dk_s}{(2\pi)^D} \mathcal{N}(\mathbf{k}_s) \Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s) e^{ \frac{i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}
    \, .  \label{eq:paraxbar}
 \end{align}
 
-In order to shade light on the dependence of the diffusion growth on the laser energy scattering direction, one needs to combine the above relation with the definition of $I_d(\mathbf{k})$ of  Eqs. \eqref{eq:ip}-\eqref{eq:id}, which can be recast as,
+In order to shade light on the dependence of the diffusion growth on the laser energy scattering direction, one needs to combine the above relation with the definition of $I_d(\mathbf{k})$ of  Eq. \eqref{eq:id}, which can be recast as,
 \begin{align}
-I_d(\mathbf{k}_d) &\simeq  \Re\left[  c\epsilon_0e^{\frac{ i\mathbf{k}_d^2x}{2k_0}}  \int d^Dk \Bar{E}_d(\mathbf{k}) \Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k})e^{-i\omega_s t -\frac{i2\mathbf{k}_d\cdot \mathbf{k}x}{2k_0}}\right]  \, , \label{eq:idb} \\
-I_p(\mathbf{k}_d) &\simeq  \Re\left[  \frac{c\epsilon_0}{2}e^{\frac{ i\mathbf{k}_d^2x}{2k_0}}  \int d^Dk \Bar{E}_p(\mathbf{k}) \Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k})e^{ -\frac{i2\mathbf{k}_d\cdot \mathbf{k}x}{2k_0}}\right]  \, , \label{eq:ipb}
+I_p(\mathbf{k}_d) &\simeq  \frac{c\epsilon_0}{2}  \int d^Dk \Bar{E}_p(\mathbf{k})
+e^{\frac{ -i\mathbf{k}^2x}{2k_0}-i\omega_s t}
+\Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k})
+e^{\frac{ i(\mathbf{k}_d-\mathbf{k})^2x}{2k_0}} 
+  \, , \label{eq:ipb} \\
+I_d(\mathbf{k}_d) &\simeq  \Re\left[  c\epsilon_0  \int d^Dk \Bar{E}_d(\mathbf{k})
+e^{\frac{ -i\mathbf{k}^2x}{2k_0}-i\omega_s t}
+\Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k})
+e^{\frac{ i(\mathbf{k}_d-\mathbf{k})^2x}{2k_0}} 
+\right]  \, , \label{eq:idb} 
 \end{align}
 hence
 \begin{align}
@@ -173,175 +183,243 @@ e^{\frac{i(\mathbf{k}_d-\mathbf{k})^2x}{2k_0} }
 I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
 \Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s) 
  \Big) \nonumber\\
++& c\epsilon_0  \Re\left(-\frac{ik_0n_0}{2n_c}  \int d^Dk\int \frac{d^Dk_s}{(2\pi)^D} e^{\frac{i( \mathbf{k}_d-\mathbf{k} )^2x}{2k_0}} \Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k} )
+%
+%e^{\frac{i\mathbf{k}^2x }{2k_0}} 
+\mathcal{N}(\mathbf{k}_s) \Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s) e^{ \frac{i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}
+%
+%\partial_x \Bar{E}_d (\mathbf{k}  ) 
+%
+  \right) \nonumber\\
 & +c\epsilon_0  \Re\left( \int d^Dk e^{-i\omega_s t+\frac{ i( \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k} )x}{2k_0}} 
 i\frac{  \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k}}{2k_0} \Bar{E}_d(\mathbf{k})\Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k} )
   \right)
 \, . \label{eq:g1}
 \end{align}
-We may now use Eqs. \eqref{eq:idb} and  \eqref{eq:ipb}, 
+Plugging Eqs. \eqref{eq:ipb}-\eqref{eq:idb} and retaining only the symmetric terms in the quadratures, 
 \begin{align}
 \partial_xI_d(\mathbf{k}_d)\simeq \Re\Big( \frac{ik_0n_0}{4n_c} \frac{1 }{  v_g n_c T_e}    \int \frac{d^Dk_s}{(2\pi)^D} I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s)
-I_p(\mathbf{k}_d-\mathbf{k}_s)
-+\frac{i\mathbf{k}_d^2}{2k_0} I_d \Big) 
-  \nonumber\\
- +c\epsilon_0  \Re\left( \int d^Dk e^{-i\omega_s t+\frac{ i( \mathbf{k}_d^2-2\mathbf{k}_d\cdot \mathbf{k} )x}{2k_0}} 
-i\frac{ -2\mathbf{k}_d\cdot \mathbf{k}}{2k_0} \Bar{E}_d(\mathbf{k})\Bar{E}_p^\star(\mathbf{k}_d-\mathbf{k} )
-  \right)
-\, . \label{eq:g2}
+\Tilde{I}_p(\mathbf{k}_d-\mathbf{k}_s)
++\frac{i\mathbf{k}_d^2}{2k_0} I_d  - S(\mathbf{k}_d)\Big)
+\, , \label{eq:g2}
 \end{align}
-For symmetric scattering, the last term  of the above equation may be neglected and, defining $\Bar{I}_d$ through $I_d = \Re[\Bar{I}_d\exp(i\mathbf{k}_d^2x/2k_0)]$, one obtains
+where we defined 
+\begin{align}
+\Tilde{I}_p(\mathbf{k}_d-\mathbf{k}_s)  &=  c\epsilon_0  \int d^Dk \Bar{E}_p^\star (\mathbf{k}_d-\mathbf{k})
+e^{\frac{ i (\mathbf{k}_d-\mathbf{k})^2x}{2k_0}-i\omega_s t}
+\Bar{E}_p^\star(\mathbf{k}-\mathbf{k}_s)
+e^{\frac{ i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}   \, , \label{eq:ipt} 
+\end{align}
+ and 
  \begin{align}
-\partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0n_0}{2n_c} \frac{e^{\frac{-i\mathbf{k}_d^2x}{2k_0}} }{  v_g n_c T_e}   
-  \int \frac{d^Dk_s}{(2\pi)^D} \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
-I_p(\mathbf{k}_d-\mathbf{k}_s)
-e^{\frac{i\mathbf{k}_s^2x}{2k_0}} 
-\, . \label{eq:g3}
+S(\mathbf{k}_d) =   \frac{ik_0n_0}{n_c} \int \frac{d^Dk_s}{(2\pi)^D}  
+\mathcal{N}(\mathbf{k}_s)\Tilde{I}_p(\mathbf{k}_d-\mathbf{k}_s)
+\, . \label{eq:s} 
 \end{align}
-It is essential to notice that, if diffraction had been neglected, thus removing the exponential terms of the above equations, the real part of $\partial_x \Bar{I}_d$ would be vanishing, implying no growth of the scattered wave. Hence, accounting for diffraction, \emph{i.e.} the curvature of the off focus wave front,  is crucial for modeling the Forward stimulated Brillouin scattering.
+It is important to note that $\Tilde{I}_p$ differs from $I_p$, and, in order to progress, an assumption on the nature of the pump wave has to be made. 
 
  \subsection{Energy growth of the Forward Brillouin scattering for an RPP beam }
- For a RPP pump beam that follows around the focal spot, 
-   \begin{align}
-   I_p(\mathbf{k}) &= I_0 \sigma ^D \mathcal{H}^{(D)}(\mathbf{k})  &\,  \mathrm{with} \, ,\\ 
-   \mathcal{H}^{(1)}(\mathbf{k}) &= H(2k_m - \vert k_y \vert ) &\,  \mathrm{in}\, \mathrm{2D} \, ,\\ 
-    \mathcal{H}^{(2)}(\mathbf{k}) &=   H(2k_m - \vert k_y \vert ) H(2k_m - \vert k_z \vert ) &\,  \mathrm{in}\, \mathrm{3D} \, ,
-   \end{align} 
-     where $H$ is the step function, $k_m=k_0/2f$ with $f$ the effective speckle focal number,  and $\sigma$ the transverse size of the pump wave, \emph{i.e.}, $I_0\sigma^D$ is its initial power.
-  \begin{align}
-\partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0n_0}{2n_c} \frac{e^{\frac{-i\mathbf{k}_d^2x}{2k_0}} }{  v_g n_c T_e}   
- I_0\sigma^D \int \frac{d^Dk_s}{(2\pi)^D}   \mathcal{H}^{(D)}(\mathbf{k}_s) \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
-e^{\frac{i\mathbf{k}_s^2x}{2k_0}} 
-\, . \label{eq:g4}
-\end{align}
-Since $2k_m$ is much larger than the width of $\alpha_r(k_s)$, we may use $\int_{k_d-2k_m}^{k_d+2k_m} X \simeq \mathcal{H}^{(D)}(\mathbf{k}) \int_{-\infty}^{+\infty}X$
-which, introducing $\delta n/n_c=n_0I_0/{n_c^2 T_ev_g}$, gives
+%For symmetric scattering, the last term  of the above equation may be neglected and, defining $\Bar{I}_d$ through $I_d = \Re[\Bar{I}_d\exp(i\mathbf{k}_d^2x/2k_0)]$, one obtains
+% \begin{align}
+%\partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0n_0}{2n_c} \frac{e^{\frac{-i\mathbf{k}_d^2x}{2k_0}} }{  v_g n_c T_e}   
+%  \int \frac{d^Dk_s}{(2\pi)^D} \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
+%I_p(\mathbf{k}_d-\mathbf{k}_s)
+%e^{\frac{i\mathbf{k}_s^2x}{2k_0}} 
+%\, . \label{eq:g3}
+%\end{align}
+%It is essential to notice that, if diffraction had been neglected, thus removing the exponential terms of the above equations, the real part of $\partial_x \Bar{I}_d$ would be vanishing, implying no growth of the scattered wave. Hence, accounting for diffraction, \emph{i.e.} the curvature of the off focus wave front,  is crucial for modeling the Forward stimulated Brillouin scattering.
+ Using the  RPP  beam model of Refs. \cite[]{POF_Schmitt_88,POF_Rose_93},
  \begin{align}
-\partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0}{2}  \frac{\delta n}{n_c}
- \mathcal{H}^{(D)}(\mathbf{k}_d)\sigma^D  \int \frac{d^Dk_s}{(2\pi)^D} \Bar{I}_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
-e^{\frac{i(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}} 
-\, . \label{eq:g5}
+ \Bar{E}_p(\mathbf{k}) = \frac{E_0}{N} \sum_{n,\vert k_{\perp,y/z}(n)\vert<k_m } e^{i\Phi_{\mathbf{k}_\perp}}\delta(\mathbf{k}  - \mathbf{k}_\perp(n))\, , \label{eq:erpp}
+ \end{align}
+ where  $N$ is the number of diffracting elements, 
+ $\delta(x)$ the Dirac function and the phases $\Phi_{k_y}$,  independent random variables taking the values $0$ or $\pi$ with equal probability.
+ For simplicity, we will assume a square phase plate that verifies $k_{\perp,y/z}(n) = n2k_m/N$ with $n$ an integer that verifies $n\in \llbracket - N/2 ,N/2 \rrbracket$. 
+ Under these conditions, and for $\langle x\rangle$ representing the statistical average of $x$,  we note   that $\langle\exp(i\Phi_{k_1}+i\Phi_{k_1})\rangle=\delta(k_1-k_2) $ so that  the statistical average  of Eq. \eqref{eq:ip} verifies
+   \begin{align}
+   \langle I_p(\mathbf{k})\rangle &= I_0 \sigma ^D \mathcal{H}^{(D)}(\mathbf{k})  &\,  \mathrm{with} \, ,\\ 
+   \mathcal{H}^{(1)}(\mathbf{k}) &= H(2k_m - \vert k_y \vert ) &\,  \mathrm{in}\, \mathrm{2D} \, ,\\ 
+    \mathcal{H}^{(2)}(\mathbf{k}) &=   H(2k_m - \vert k_y \vert ) H(2k_m - \vert k_z \vert ) &\,  \mathrm{in}\, \mathrm{3D} \, .
+   \end{align}
+We introduce,  $H$ the step function, $k_m=k_0/2f$ with $f$ the effective speckle focal number,  and $\sigma$ the transverse size of the pump wave, \emph{i.e.}, $I_0\sigma^D$ is its initial power.
+As, for $\Tilde{I}_p$, its statistical average for an RPP beam reads, 
+\begin{align}
+\langle \Tilde{I}_p(\mathbf{k}_d-\mathbf{k}_s)\rangle   &=  c\epsilon_0\frac{E_0^2}{N^2}  \int d^Dk 
+e^{\frac{ i (\mathbf{k}_d-\mathbf{k})^2x}{2k_0}-i\omega_s t}
+e^{\frac{ i(\mathbf{k}-\mathbf{k}_s)^2x}{2k_0}}  
+\sum_{\vert k_{1,y/z}\vert,\vert k_{2,y/z}\vert  <k_m}
+\langle e^{i\Phi_{\mathbf{k}_1}+i\Phi_{\mathbf{k}_2}}\rangle
+\delta(\mathbf{k}_d-\mathbf{k} -\mathbf{k}_2 ) 
+\delta(\mathbf{k}-\mathbf{k}_s -\mathbf{k}_1) 
+\, . \label{eq:ipt2} 
+\end{align}
+When  $\mathbf{k}_1=\mathbf{k}_2$, the Dirac functions can be recast into 
+\begin{align}
+\delta(\mathbf{k}_d-\mathbf{k} -\mathbf{k}_2 ) 
+\delta(\mathbf{k}-\mathbf{k}_s -\mathbf{k}_1)= \mathcal{H}^{(D)}(2\mathbf{k}-2\mathbf{k}_s  )  \delta (\mathbf{k}_d+\mathbf{k}_s -2\mathbf{k} ) \, ,
+\end{align}
+and thus yields
+\begin{align}
+\langle \Tilde{I}_p(\mathbf{k}_d-\mathbf{k}_s)\rangle   &=  I_0\sigma^D
+e^{\frac{ i(\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  
+\mathcal{H}^{(D)}\left( \mathbf{k}_d-\mathbf{k}_s  \right)
+\, . \label{eq:iptf} 
+\end{align}
+Hereafter, the $\langle  \cdot \rangle$-notation will  me removed for sake of simplicity. 
+Equations \eqref{eq:g2} and \eqref{eq:iptf} may now be combined,  
+  \begin{align}
+\partial_xI_d(\mathbf{k}_d)&\simeq  \Re\left( \frac{ik_0n_0}{2n_c} \frac{ I_0\sigma^D }{  v_g n_c T_e}   
+ \int \frac{d^Dk_s}{(2\pi)^D}   \mathcal{H}^{(D)}(\mathbf{k}_d-\mathbf{k}_s) I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) e^{\frac{ i(\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  -S(\mathbf{k}_d) \right)
+\, . \label{eq:g4}\\
+S(\mathbf{k}_d) &=   \frac{ik_0n_0}{n_c} I_0\sigma^D\int \frac{d^Dk_s}{(2\pi)^D}  \mathcal{H}^{(D)}\left( \mathbf{k}_d-\mathbf{k}_s  \right)
+\mathcal{N}(\mathbf{k}_s) e^{\frac{ i(\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  
 \end{align}
 
-In order to reach analytical progress, we will assume that $I_d$ is  smoother and larger  than $\alpha_\mathrm{r}(\mathbf{k}_s) 
-\exp[i(\mathbf{k}_s^2-\mathbf{k}_d^2)x / 2k_0]$, hence 
-\begin{align}
-\partial_x\Bar{I}_d(\mathbf{k}_d)\simeq  \frac{ik_0}{2}  \frac{\delta n}{n_c}
- \mathcal{H}^{(D)}(\mathbf{k}_d) \sigma^D \Bar{I}_d(0) \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-e^{\frac{i(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}} 
-\, . \label{eq:g6}
+Since $2k_m$ is much larger than the width of $\alpha_r(k_s)$, we may use $\int_{k_d-2k_m}^{k_d+2k_m} X \simeq \mathcal{H}^{(1)}(k_d) \int_{-\infty}^{+\infty}X$. For simplicity, the same assumption will be applied to the seed term $S$, and, introducing $\delta n/n_c=n_0I_0/{n_c^2 T_ev_g}$ we obtain, 
+ \begin{align}
+\partial_xI_d(\mathbf{k}_d)&\simeq  \frac{-k_0}{2} \frac{ \delta n}{n_c}   \sigma^D
+ \mathcal{H}^{(D)}(\mathbf{k}_d)
+ \int \frac{d^Dk_s}{(2\pi)^D}    [I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) - I_s(\mathbf{k}_s)] \sin\left[{\frac{ (\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  \right]
+\, ,  \label{eq:g5}\\
+I_s(\mathbf{k}_s) &=-2n_c T_ev_g   
+\mathcal{N}(\mathbf{k}_s)
 \end{align}
+%In order to reach analytical progress, we will assume that $I_d$ is  smoother and larger  than $\alpha_\mathrm{r}(\mathbf{k}_s) 
+%\sin[(\mathbf{k}_d^2-\mathbf{k}_s^2)x / 2k_0]$, hence
+%\begin{align}\partial_xI_d(\mathbf{k}_d)\simeq  \frac{-k_0}{2} \frac{ \delta n}{n_c}   \sigma^D\mathcal{H}^{(D)}(\mathbf{k}_d) I_d(0) \int \frac{d^Dk_s}{(2\pi)^D}    \alpha_\mathrm{r}(\mathbf{k}_s) \sin\left[{\frac{ (\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  \right]\, . %\label{eq:dxidkd}
+%\end{align}
  
  \begin{figure*}[!]
 \begin{tabular}{cc}
 (a) $D=1$ &(b) $D=2$ \\
 \includegraphics[width=0.49\textwidth]{int_akin_sin.eps}
  &
-\includegraphics[width=0.49\textwidth]{int_akin_sin_D2.eps}\\
-(c) $D=1$ &(d) $D=2$ \\
-\includegraphics[width=0.49\textwidth]{int_akin_sin_gr.eps}
- &
-\includegraphics[width=0.49\textwidth]{int_akin_sin_D2_gr.eps}
+\includegraphics[width=0.49\textwidth]{int_akin_sin_D2.eps}
 \end{tabular}
 \caption{ \label{fig:intakinsin}
-Numerical calculation of the averaged real gain given by Eq. \eqref{eq:gain0} for $\sigma = 200 \,\mu m$ and  for various values of $ZT_e/T_i$ in the case $D=1$ (a) and $D=2$ (b). The absolute value, $\vert g \vert $,  in plain lines correspond to the left axis and the complex argument of $g$, $\theta_g$, in dashed lines  corresponds to the right axis.
+Numerical calculation of $g_0(x)$ by Eq. \eqref{eq:gain0} for $\sigma = 200 \,\mu m$ and  for various values of $ZT_e/T_i$ in the case $D=1$ (a) and $D=2$ (b). 
  }
 \end{figure*}
-An exact and general solution of \eqref{eq:g6} is out of the scope of this manuscript, however, we extract from it some general tendencies such as the averaged growth rate of the energy associated with $I_d$, and the dominant direction in which the pump is scattered. A complex gain can be extracted from  Eq. \eqref{eq:g6}
-\begin{align}
-&g(\mathbf{k}_d,x) = \frac{\partial_x\Bar{I}_d(\mathbf{k}_d)}{\Bar{I}_d(0)} %\nonumber \\
-%&
-=  \frac{k_0}{2}  \frac{\delta n}{n_c}
- \mathcal{H}^{(D)}(\mathbf{k}_d)  \sigma^D \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-i\exp\left[ \frac{(\mathbf{k}_s^2-\mathbf{k}_d^2)x}{2k_0}\right]
-\, . \label{eq:gainkd}
-\end{align}
+%\begin{align}
+%g(\mathbf{k}_d,x) = \frac{\partial_x I_d(\mathbf{k}_d)}{I_d(0)} %\nonumber \\
+%=  \frac{-k_0}{2} \frac{ \delta n}{n_c}   \sigma^D
+% \mathcal{H}^{(D)}(\mathbf{k}_d)
+% \int \frac{d^Dk_s}{(2\pi)^D}    \alpha_\mathrm{r}(\mathbf{k}_s) \sin\left[{\frac{ (\mathbf{k}_d-\mathbf{k}_s)^2x}{4k_0}}  \right]\, . \label{eq:gainkd}
+%\end{align}
+
+%Making use of 
+%\begin{align}
+    %\int_{-2k_m}^{+2k_m}dk\sin\left[{\frac{ (k-k_s)^2x}{4k_0}}  \right]=\sqrt{\frac{2\pi k_0}{x}}\left[ \mathrm{S}\left(\sqrt{\frac{x}{2\pi k_0}} (2k_m- k_s)\right)-\mathrm{S}\left(\sqrt{\frac{x}{2\pi k_0}} (-2k_m -k_s)\right)\right]
+%\end{align}
  \end{widetext}
-Hence, the averaged complex gain can be obtained setting $\mathbf{k}_d=0$,
+Deriving the exact and general solution of the above equation is out of the scope of this manuscript, however, interesting results may emerge from tractable limits. 
+
+ \subsection{Angular dependence of the  Forward Brillouin scattering}
+As a the plateau width of $\alpha_r$ is much smaller than $2k_m$,\textcolor{red}{(Demonstration generale)}  we may assume, in the quadrature of Eq. \eqref{eq:g5},   $ \vert\mathbf{k}_s \vert/\vert\mathbf{k}_d\vert \le\Delta k/ \vert\mathbf{k}_d\vert \ll 1$ so that to leading order,
 \begin{align}
-g(0,x)&=  \Gamma_0 \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
-i\exp\left[ \frac{\mathbf{k}_s^2 x}{2k_0}\right]\, , \nonumber\\
+\partial_xI_d(\mathbf{k}_d,x)&\simeq  \frac{-k_0}{2} \frac{ \delta n}{n_c}   \sigma^D 
+ \mathcal{H}^{(D)}\sin\left({\frac{ \mathbf{k}_d^2x}{4k_0}}  \right)
+B(x)
+\, , \label{eq:dxidtd}
+\end{align}
+where $B(x)$ is,
+\begin{align}
+B(x)&=
+ \int \frac{d^Dk_s}{(2\pi)^D}    I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
+\, . \label{eq:b}
+\end{align}
+With $g_0(x)$ following
+\begin{align}
+g_0(x)&= -\Gamma_0 \int \frac{d^Dk_s}{(2\pi)^D}  \alpha_\mathrm{r}(\mathbf{k}_s) 
+\sin\left(\frac{ \mathbf{k}_s^2x}{4k_0}  \right)\,  \nonumber\\
 \Gamma_0&=\frac{k_0}{2}  \frac{\delta n}{n_c}
   \sigma^D \, ,
 \label{eq:gain0}
 \end{align}
-which real part corresponds to the overall energy exchange between the pump and diffused wave.
-
-Figures \ref{fig:intakinsin}(a,b) illustrate, as a function of $k_m^2 x /k_0$, the evolution of $\Re[g(0,x)]$
-normalized to $\Gamma_0=k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
-The averaged energy gain of the diffused wave is positive before focus (\emph{i.e.} $x=0$) and negative afterward, with  a linear behavior of the $\Re[g(0,x)]$ for  $\vert k_m^2 x /k_0 \vert < 100$  that very weakly depends on $ZT_e/T_i$.  Indeed, as shown in Fig \ref{fig:akin}(c), $\alpha_r^{(2)}$ exhibits no dependence  on $ZT_e/T_i$. Both cases $D=1$ and $2$ present a weaker dependence of $g(0,x)$ on $\vert k_m^2 x /k_0 \vert > 100$, it occurs when the $\sin(k^2x/2k_0)$ in the quadrature of Eq. \eqref{eq:gain0} varies faster than the plateau width of $\alpha_r$, $\vert k_s/k_0\vert \lesssim 5\cdot 10^{-3}\equiv \Delta k /2$ in Figs. \ref{fig:akin}(a,b), \emph{i.e.} for $\vert x\vert \gtrsim k_0/\Delta k^2$ which gives $\vert k_m^2x/k_0 \vert  \gtrsim 60  $ in fair  agreement with Figs. \ref{fig:intakinsin}(a,b).
-For $\vert k_m^2 x /k_0 \vert \gtrsim 400$, the absolute value of $\Re[g(0,x)]$ vanishes faster as $ZT_e/T_i$ decreases. 
-
-Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $\Re[g(0,x)]/\Gamma_0 \gtrsim 3\cdot 10^3$ before focus (for $200< k_m^2 x/k_0 < 600$) so that, for  a propagation of $\Delta x = 2\,\rm mm$ (\emph{i.e.} $k_m^2 \Delta x/k_0 = 200$), the net gain is $\Re[g(0,x)]\Delta x\gtrsim 3.5 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $\Re[g(0,x)]\Delta x\gtrsim 70 $, thus yielding substantial growth for both $D=1$ and $2$.
-
-We therefore know that the Forward Brillouin may grow significantly in the plasmas  of interest here and, in order to shade light on the scattered  direction of the pump wave, we will now address the spectral behavior of Eq. \eqref{eq:gainkd}.
-
-\subsection{Angular denpendence of the  Forward Brillouin scattering}
-
-Introducing $x_0$, the left boundary of our system, we may now the solution of Eq. \eqref{eq:gainkd}, 
+one can easily show that $B(x)$ fulfills 
 \begin{align}
-\partial_x\Bar{I}_d &=I_{d,0} \mathcal{H}^{(D)}(\mathbf{k}_d) g(0,x)
-e^{G(0,x)-\frac{i\mathbf{k}_d^2x }{2k_0}} \, ,\nonumber\\
-G(0,x)&=\int_{x_0}^{x}g(0,x) dx \, , \label{eq:dxidkd}
-\end{align}
-where $I_{d,0}$ is an integration constant. 
-For $G=G_r+iG_i$ and $g=\vert g \vert \exp(i\theta_g)=g_r+ig_i$, we thus have
-\begin{align}
-\partial_x I_d \simeq K\Gamma_0 \mathcal{H}^{(D)}(\mathbf{k}_d)  e^{ G_r} \vert g \vert \cos\left( G_i +\theta_g-\frac{\mathbf{k}_d^2 x }{2k_0} \right) \, . \label{eq:dxidkdf}
+d_xB = g_0(x) B(x)\, ,
+\label{eq:db}
 \end{align} 
-The above equation shows that, if $\vert k_{y/z}\vert <2k_m$, some modes may be amplified ($\partial_x I_d>0$) or damped ($\partial_x I_d<0$) depending on the sign of the cosine argument that depend on $\mathbf{k}_d$ and $x$ through the diffraction term, $\mathbf{k}_d^2 x/2k_0$, and $ G_i(x)+ \theta_g(x)$. 
-The growth is thus maximized for $\mathbf{k}_d=\mathbf{k}_n$ with $G_i+ \theta_g-\mathbf{k}_n^2 x /2k_0 = 2n\pi$ and where $n$ is a signed integer. 
-\begin{figure}[!]
-\begin{tabular}{cc}
-(a) $D=1$\\
-\includegraphics[width=0.49\textwidth]{gkx_2d_2mm.png}\\
-(b) $D=2$\\
-\includegraphics[width=0.49\textwidth]{gkx_2d_2mm_D2.png}\\
-(c)\\
-\includegraphics[width=0.49\textwidth]{G_2d_2mm.eps}
-\end{tabular}
-\caption{ \label{fig:gxk}
-(a,b) Numerical evaluation with $k_m^2x_0/k_0 = -212$ of $\partial_x I_d /I_{d,0}\Gamma_0$ following Eq. \eqref{eq:dxidkdf} for $(D,\Gamma_0)=(1,1.2)$ (a) and $(D,\Gamma_0)=(2,2.5\cdot 10^{-4} )$ (b) as a function of $k_m^2x/k_0$ and $k_d/k_m$.
-(c) $G(x)$ for $D=1$ (black, left axis) and $D=2$ (red, right axis).
-The wavevector that maximizes $\partial_x I_d$  from Eq. \eqref{eq:kn} are superimposed on (a) and (b) as black plain lines.
- }
-\end{figure}
-Regarding the region before focus ($x<0$), we now search for all the  modes that are amplified at a given position, \emph{i.e.} that fulfills $\vert k_{n,y/z}\vert <2k_m$. 
-The maximum integer, $N_\mathrm{max}(x)$, ensue from setting  $k_n=2k_m$,
+and thus, for a left boundary located at $x=x_0$,
+\begin{align}
+B(x) = B_0\exp\left(\int_{x_0}^x g_0 \right)\, ,
+\label{eq:bf}
+\end{align} 
+where $B_0$ is an integration constant independent of the wavevector.
+
+Combining Eqs.  \eqref{eq:dxidtd} and \eqref{eq:bf} yields 
+\begin{align}
+\partial_xI_d(\mathbf{k}_d,x)&\simeq B_0\Gamma_0
+ \mathcal{H}^{(D)}\sin\left({\frac{ \mathbf{k}_d^2x}{4k_0}}  \right)
+\exp\left(\int_{x_0}^x g_0 \right)
+\, . \label{eq:dxidtdf}
+\end{align}
+
+
+Figures \ref{fig:intakinsin}(a,b) illustrate, as a function of $k_m^2 x /k_0$, the evolution of $g_0(x)$
+normalized to $\Gamma_0=k_0\delta n / 2n_c$. Note that, for $\lambda_0=2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$,  $k_m^2 x /k_0=200$ corresponds to $x\simeq 2\,\rm mm$. 
+The value of $g_0$ is negative before focus (\emph{i.e.} $x=0$) and positive afterward, with  a linear behavior of the $g(0,x)$ for  $\vert k_m^2 x /k_0 \vert < 200$  independent of $ZT_e/T_i$. In both cases $D=1$ and $2$, the slope of $g_0(x)$  in the vicinity of $x=0$   decreases significantly when   $\vert k_m^2 \vert x\vert /k_0 \vert \gtrsim 100$, this occurs when the $\sin(k^2x/4k_0)$ in the quadrature of Eq. \eqref{eq:gain0} varies faster than the plateau width of $\alpha_r$, $\vert k_s/k_0\vert \lesssim 5\cdot 10^{-3}\equiv \Delta k /2$ in Figs. \ref{fig:akin}(a,b), \emph{i.e.} for $\vert x\vert \gtrsim 2k_0/\Delta k^2$ which gives $\vert k_m^2x/k_0 \vert  \gtrsim 120  $ in reasonable  agreement with Figs. \ref{fig:intakinsin}(a,b).
+For both dimensions and$\vert k_m^2 x /k_0 \vert \gtrsim 400$, the absolute value of $g_0(x)$ vanishes faster as $ZT_e/T_i$ decreases. 
+
+Interestingly, when $ZT_e/T_i=1$ and $T_e=4$ kev, $g_0$ become positive for $k_m^2x/k_0<-400$, \emph{i.e.} well before focus (at $x=0$). In this region,  the $\sin(k^2x/4k_0)$ in the quadrature of Eq. \eqref{eq:gain0} is minimized   where $\alpha_r$ reaches its minimum [see Fig. \ref{fig:akin}(a), $\vert k_s/k_0\vert \simeq 0.01$ for $ZT_e/T_i=1$ and $T_e=4$ kev in dashed black line]. Indeed, plugging  $\vert k_s/k_0\vert \simeq 0.01$ into $3\pi/2>k^2x/4k_0>\pi/2$ results in a positive value of $g_0$  when $1100\gtrsim \vert x\vert\gtrsim 370$, in agreement with Figures \ref{fig:intakinsin}(a) (dashed black line).
+Note that if the Forward stimulated Brillouin  scattering were to grow   and affect the pump propagation more than four millimeters before focus, a large impact on the pump propagation and its energy deposition is to be expected. 
+
+Let's momentarily consider, for illustration purposes,  the  case of a RPP beam of width $\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$ and $f = 6.5$ propagating in a H$^{+}$ plasma with $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. In these conditions, $\delta n/n_c \simeq 7\cdot 10^{-4}$ and  for $D=1$ [see Fig. \ref{fig:intakinsin}(a)], one have $g_0(x)/\Gamma_0 \gtrsim 3\cdot 10^3$ before focus (for $200< k_m^2 x/k_0 < 600$) so that, for  a propagation of $\Delta x = 2\,\rm mm$ (\emph{i.e.} $k_m^2 \Delta x/k_0 = 200$), the net gain is $g_0(x)\Delta x\sim 7 $. When $D=2$ [see Fig. \ref{fig:intakinsin}(b)], one obtains $g_0(x)\Delta x\sim 350 $, thus yielding substantial growth for both dimensions.
+
+
+
+We therefore know that the Forward Brillouin may grow significantly in the plasmas  of interest here and, in order to shade light on the scattered  direction of the pump wave, we will now address the spectral behavior of Eq. \eqref{eq:dxidtdf}.
+
+\subsection{Approximated and analytical formulation of the effective gain}
+Although, the diffused wave is damped in the limit $\mathbf{k}_d=0$, the equation above shows that there exists growing modes (\emph{i.e.} $\partial_x I_d>0$). In particular, the most growing modes verifies $\mathbf{k}_d=\mathbf{k}_n$ with 
+\begin{equation}\label{eq:kn}
+    \mathbf{k}_n^2 =\frac{4\pi k_0}{x} \left(2n- \frac{1}{2}   \right) \, ,
+\end{equation}
+Here, $n$ is a signed  integer with  $n \cdot x /\vert x\vert\in  \llbracket 1 ,N_\mathrm{max} \rrbracket$ and  $ N_\mathrm{max}$ ensues from setting  $k_n=2k_m$ in Eq. \eqref{eq:kn},
 \begin{equation}\label{eq:nmax}
-    N_\mathrm{max} =\left\lfloor \left\vert  G_i +\theta_g-2\frac{k_m^2  x   }{k_0}  \right\vert \right\rfloor \,  
+    N_\mathrm{max} =\left\lfloor  \frac{k_m^2\vert x\vert }{2\pi k_0} +\frac{1}{4}   \right\rfloor \,  ,
 \end{equation}
 where $\lfloor x  \rfloor$ is the floor function.
-The minimization regarding $n$ of  $\mathbf{k}_n^2 \vert x\vert  /2k_0 = 2n\pi-G_i- \theta_g$ leads to  the minimum integer, $N_\mathrm{min}(x)$, which verifies
-\begin{equation}\label{eq:nmin}
-    N_\mathrm{min} =  \left\lfloor\frac{ G_i+ \theta_g}{2\pi}\right\rfloor+1\, .
-\end{equation}
-The wavevectors that maximizes the growth therefore verifies,
-for all even numbers $n$ that verifies $n\in  \llbracket -N_\mathrm{max} ,-N_\mathrm{min} \rrbracket   \cup \llbracket N_\mathrm{min} ,N_\mathrm{max} \rrbracket$, 
-\begin{equation}\label{eq:kn}
-    \mathbf{k}_n^2 =-\frac{4\pi k_0}{x} \left(n- \frac{  G_i +\theta_g}{2\pi}   \right) \, .
-\end{equation}
-%For these wavevectors, the growth of the scattered intensity is identical, depending soleley on the position $x$, 
-%\begin{align}
-%\partial_x I_d(\mathbf{k}_n) = I_{d,0}\Gamma_0   e^{ G_r(x)} \vert g(x) %\vert \, . \label{eq:dxidkn}
-%\end{align} 
 
+Introducing $x_0$, the left boundary of our system, $I_{d,0} = I_d(0,x_0)$, plugging $I_d(0,x)=I_{d,0}\exp(\int_{x_0}^xg_0)$ into Eq. \eqref{eq:dxidtd}  yields 
+\begin{align}\label{eq:idf}
+   \frac{I_d(\mathbf{k}_n,x)}{I_{d,0}}-1& = \Gamma_0 A_r \int_{x_0}^x \exp\left(\int_{x_0}^{x_1} g_0 dx_1\right) dx \,  , \\ 
+   &\simeq \frac{\Gamma_0A_r}{g_0(x_0)}
+\end{align}
+
+%\begin{figure}[!]
+%\begin{tabular}{cc}
+%(a) $D=1$\\
+%\includegraphics[width=0.49\textwidth]{gkx_2d_2mm.png}\\
+%(b) $D=2$\\
+%\includegraphics[width=0.49\textwidth]{gkx_2d_2mm_D2.png}\\
+%(c)\\
+%\includegraphics[width=0.49\textwidth]{G_2d_2mm.eps}
+%\end{tabular}
+%\caption{ \label{fig:gxk}
+%(a,b) Numerical evaluation with $k_m^2x_0/k_0 = -212$ of $\partial_x I_d /I_{d,0}\Gamma_0$ following Eq. \eqref{eq:dxidkdf} for $(D,\Gamma_0)=(1,1.2)$ (a) and $(D,\Gamma_0)=(2,2.5\cdot 10^{-4} )$ (b) as a function of $k_m^2x/k_0$ and $k_d/k_m$.
+%(c) $G(x)$ for $D=1$ (black, left axis) and $D=2$ (red, right axis).
+%The wavevector that maximizes $\partial_x I_d$  from Eq. \eqref{eq:kn} are superimposed on (a) and (b) as black plain lines.
+% }
+%\end{figure}
 For $(D,\Gamma_0)=(1,1.2)$,   or $(D,\Gamma_0)=(2,2.5\cdot 10^{-4} )$ (which corresponds to $\delta n/n_c =7\cdot 10^{-4}$, $2\pi/k_0=0.35\,\rm\mu m$ and $\sigma=200\,\rm\mu m$) and $k_m^2x_0/k_0= -200$ (\emph{i.e.} $x_0=-2 \,\rm mm$ for $2\pi/k_0=0.35\,\rm\mu m$ and $f=6.5$), Figs. \ref{fig:gxk}(a,b) illustrate $\partial_x I_d / I_{d,0} \Gamma_0$ from Eq. \eqref{eq:dxidkd} and evidences the oscillation of $\partial_x I_d$ at $x\simeq \pm x_0$. Moreover, the wavevector that maximizes the growth of the scattered intensity, as predicted by Eq. \eqref{eq:kn} (black lines), agrees very well with the maximum of Figs. \ref{fig:gxk}(a,b). 
 
 We also note that the amplitude of $\partial_x I_d$ rapidly vanishes for $k_m^2 x/k_0\gtrsim -180$ in 2D ($\gtrsim -205$ in 3D), indeed $G_r$  as illustrated in  Fig. \ref{fig:gxk}(c) (black and red plain line for $D=1$ and $2$,  right and left axis respectively) is negative. For $D=1$,  $k_m^2 x/k_0\sim 150$, $G_r\simeq -2$,  the exponential factor of Eq. \eqref{eq:dxidkd} verifies $\exp(\Gamma_0G_r) \simeq 0.1$, thus stopping the growth of the scattered wave.  For two transverse dimensions, $G_r\sim -20 $ for $k_m^2 x/k_0\sim 150$, yielding a faster damping of the $\partial_x I_d$-amplitude than for $D=1$.
 Hence, the forward Brillouin diffusion is maximized at the largest distance  of the focal plane $x=0$, around $x\simeq \pm x_0$, \emph{i.e.}  where the curvature of the wavefront is maximized.
 
-\begin{figure}[!]
-\begin{tabular}{c}
-\includegraphics[width=0.49\textwidth]{Idk.eps}
-\end{tabular}
-\caption{ \label{fig:idk}
-Scattered intensity normalized to its initial value and the focal plane, $I_d(x=0)/I_{d,0}-1$ obtained through the numerical integration of Eq. \eqref{eq:dxidkd} in plain lines for 
-$\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$,$f = 6.5$, $Z=A=1$, $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. The approximation of Eq. \eqref{eq:idtdamp} for $k=k_n$ are superimposed  as circles.
- }
-\end{figure}
+%\begin{figure}[!]
+%\begin{tabular}{c}
+%\includegraphics[width=0.49\textwidth]{Idk.eps}
+%\end{tabular}
+%\caption{ \label{fig:idk}
+%Scattered intensity normalized to its initial value and the focal plane, $I_d(x=0)/I_{d,0}-1$ obtained through the numerical integration of Eq. \eqref{eq:dxidkd} in plain lines for 
+%$\sigma =200\,\rm\mu m$, $I_0=3\cdot 10^{14} \,\rm W.cm^{-2}$, $2\pi/k_0 = 0.35\,\rm\mu m$,$f = 6.5$, $Z=A=1$, $n_e/n_c=0.1$, , $T_e=1$ kev and $T_i=300$ eV. The approximation of Eq. \eqref{eq:idtdamp} for $k=k_n$ are superimposed  as circles.
+% }
+%\end{figure}
 For the case of Fig. \ref{fig:gxk} and  at $x=x_0$, a total of $2(N_\mathrm{max}-N_\mathrm{min}+1) = 422$ growing modes are  found [only 6 of them verifies $0<k_n<0.6k_m$, see (a,b)]. As shown in  Fig. \ref{fig:idk} which illustrates $I_d(x=1, k)/I_{d,0}-1$, the wavevector interval between two neighboring modes decreases as $n^{-1/2}$ [see Eq. \eqref{eq:kn}] so that  most of the modes are located close to $\vert k \vert = 2k_m$. However, after integration over the $x$ coordinate  of Eq. \eqref{eq:dxidkd}, the largest amplitude modes fulfills $\vert k \vert /k_m<0.5$ (see Fig. \ref{fig:idk}).
 
-\subsection{Approximated and analytical formulation of the effective gain}
+
 As the  case of interest here,  most of the scattered intensity growth occurs close to the left boundary [$x=x_0$, see Figs. \ref{fig:gxk}(a,b)] if the exponential term of Eq. \eqref{eq:dxidkd}  decreases faster than the $k^2x/k_0$ varies, \emph{i.e.} if $\vert g_r(x_0)k_0/k_m^2\vert  \gg 1$. Under these condition,  one may proceed to a Taylor development of Eq. \eqref{eq:dxidkd} in the vicinity of $x=x_0$ leading to,
 \begin{widetext}
 \begin{align}
