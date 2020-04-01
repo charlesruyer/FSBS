@@ -325,7 +325,7 @@ B(x)
 where $B(x)$ is,
 \begin{align}
 B(x)&=
- \int \frac{d^Dk_s}{(2\pi)^D}    I_d(\mathbf{k}_s) \alpha_\mathrm{r}(\mathbf{k}_s) 
+ \int \frac{d^Dk_s}{(2\pi)^D}    I_d(\mathbf{k}_s,x) \alpha_\mathrm{r}(\mathbf{k}_s) 
 \, . \label{eq:b}
 \end{align}
 With $g_0(x)$ following
@@ -387,62 +387,74 @@ where $\lfloor u  \rfloor$ is the floor value of u.
 A total a $2N_\mathrm{max}$ that can be  amplified and are not regularly distributed in the the initial RPP spectral width $\vert k \vert< 2k_m$, most of them are located in $\vert k \vert >k_m\gg \Delta k$. 
 
 \subsection{Forward Brillouin-unstable region after the focal plane}
-We will here address the region $x>0$ for which Figs. \ref{fig:intakinsin}(a,b) presents $g_0>0$.
-As $x$ grows starting from  $x=0$,  $\partial_x I_d$ starts to be positive  first for  $\vert k_{y/z} \vert= 2k_m$, if $2\pi>4k_m^2x/4k_0>\pi$, \emph{i.e.} when 
-\begin{equation}\label{eq:xc}
-x_c=x_1^- = \frac{\pi k_0 }{k_m^2}  <x < x_1^+ = \frac{2\pi k_0 }{k_m^2} \, .
-\end{equation}
-Moreover, the first most unstable mode, $k_1(x)$, enters in the  RPP spectral width $\vert k \vert< 2k_m$ when $k_1(x)=2k_m$ so that 
-$x=3\pi k_0 /2k_m^2=(x_1^++x_1^-)/2$. As $x$ increases and become larger than $x_1^+$, more and more mode verifies $\vert k_{y/z} \vert= 2k_m$, and the number of unstable wavevectors increases linearly, following Eq. \eqref{eq:nmax}.
-
-\subsubsection{Effective gain in the region $x_1^-<x<x_1^+$}
-Making use of  $f=6.5$ and $2\pi/k_0=0.35\,\rm \mu m$ yields  $(x_1^-,x_1^+)= (30,60)\,\rm\mu m$  and  $f=6.5$ and $2\pi/k_0=1\,\rm \mu m$ results in $(x_1^-,x_1^+)= (84,168)\,\rm\mu m$. 
-Hence, when $x_1^-<x<x_1^+$, the most unstable modes are located at $\vert k_{y/z}\vert= 2k_m$. In the vicinity of the focal plane, a Taylor development of  $g_0$ may be used assuming $\vert \Delta k^2x/4k_0\vert  \ll 1$,
-\begin{align}
-%g_0&\simeq -\Gamma_0 \left(\frac{A_2}{4k_0} x + \frac{A_6}{192k_0^3 }x^3 \right) \label{eq:g0td}\, ,\\ 
-g_0&\simeq -\Gamma_0  \frac{A_2}{4k_0} x + O(x^3)  \label{eq:g0td}\, ,\\ 
-A_n&=\int\frac{d^Dk_s}{(2\pi)^{D}}k_s^n\alpha_r \, . \label{eq:an}
-\end{align}. 
-Combined with Eq. \eqref{eq:dxidtdf}, for $x_1^-   <x < x_1^+$  we obtain,
-\begin{align}
-\partial_xI_d(2k_m)&\simeq -B_0\Gamma_0
-\sin\left({\frac{ k_m^2x}{k_0}}  \right)
-\exp\left(  - \frac{ \Gamma_0 A_2x^2}{8k_0}  \right)
-\, , \label{eq:dxx0}
-\end{align}
-where $A_2<0$ for $ZT_e/T_i\ge 1$. 
 \begin{figure}[!]
 \begin{tabular}{cc}
-(a) $\log_{10}[A(x_1^-,x_1^+)]$,  $D=1$\\
-\includegraphics[width=0.49\textwidth]{Gx1_D2.png}\\
-(b) $D=2$\\
-%\includegraphics[width=0.49\textwidth]{gkx_2d_2mm_D2.png}\\
-%(c)\\
-%\includegraphics[width=0.49\textwidth]{G_2d_2mm.eps}
+\includegraphics[width=0.49\textwidth]{sin2.png}\\
 \end{tabular}
-\caption{ \label{fig:gx1}
-(a,b) 
- }
+\caption{ \label{fig:sin2} Illustration of $-\sin\left({\frac{ k^2x}{4k_0}}  \right)$ as a colormap.}
 \end{figure}
-The integration between $x_1^-$ and $x_1^+$ requires the introduction of a constant, $I_{d,0}=I_d(x=x_1^-)$, assumed to be independent of $k$ for simplicity and which can be related to $B_0$ [see Eq. \eqref{eq:b}] through $B_0=I_{d,0}A_0$, thus giving
+We will here address the region $x>0$ for which Figs. \ref{fig:intakinsin}(a,b) presents $g_0>0$.
+As $x$ grows starting from  $x=0$,  $\partial_x I_d$ starts to be positive  first for  $\vert k_{y/z} \vert= 2k_m$  if the $-\sin$ of Eq. \eqref{eq:dxidtdf}, illustrated in Fig. \ref{fig:sin2}, is positive, \emph{i.e.} $2\pi>4k_m^2x/4k_0>\pi$ and  when 
+\begin{equation}\label{eq:xc}
+x_1^- = \frac{\pi k_0 }{k_m^2}  <x < x_1^+ = \frac{2\pi k_0 }{k_m^2} \, .
+\end{equation}
+We will therefore,  use $x_0\equiv x_c=x_1^-$ during the resolution  Eq. \eqref{eq:dxidtdf}. 
+
+Moreover, as illustrated in Fig. \ref{fig:sin2}, the first most unstable mode, $k_1(x)$, enters in the  RPP spectral width $\vert k \vert< 2k_m$ when $k_1(x)=2k_m$ so that 
+$x=3\pi k_0 /2k_m^2=(x_1^++x_1^-)/2$. As $x$ increases and become larger than $x_1^+$, more and more mode verifies $\vert k_{y/z} \vert= 2k_m$, and the number of unstable wavevectors increases linearly, following Eq. \eqref{eq:nmax}.
+
+A simple analytical formulation of the scattered  intensity amplification is reachable  when assuming $g_0$ constant. Such assumption is fairly well verified in the case $D=2$ as $g_0$ presents a plateau [see Fig. \ref{fig:intakinsin}(b)]  around $g_0/\Gamma_0\sim 5\cdot 10^{8}$  in the region $k_m^2x/k_0  \lesssim  600 $ ( $  \lesssim  180 $) when $T_e=1$ keV ($T_e=4$ keV). As for $D=1$, the replacement of  $g_0$ by a constant ($g_0/\Gamma_0\sim 3\cdot 10^{3}$), although enlightening, is more questionable when  $T_e=1$ keV and wrong when $T_e=4$ keV. 
+
+Hence for $g_0\equiv \Tilde{g_0}$ constant and $x>x_c$, Eq. \eqref{eq:dxidtdf} becomes
+\begin{align}
+   \partial_x I_d&=-B_0\Gamma_0 \mathcal{H}^{(D)}(\mathbf{k}_d)e^{  \Tilde{g_0}(x-x_c)} 
+    \sin\ \left(\frac{\mathbf{k}_d^2x }{2k_0}  \right)   \, , \label{eq:idtd1} 
+    %\\ A_0 &= \int \frac{d^Dk_s}{(2\pi)^D}    \alpha_\mathrm{r}(\mathbf{k}_s) \, .\label{eq:a0}
+\end{align}
+For simplicity, we also assumed $I_d(x=x_c)=I_{d,0}$ independent of $\mathbf{k}$, so that following, Eq. \eqref{eq:bf}, $B_0 = I_{d,0}A_0$
+After resolution, relating  $B_0$ to $I_d(x=x_c)=I_{d,0}$ through Eq. \eqref{eq:bf}, we obtain
 \begin{widetext}
 \begin{align}
- A(x_1^-,x_1^+)=\frac{I_d(2k_m,x_1^+)}{I_d(2k_m,x_1^-)} - 1& \simeq 
-\frac{A_0\Gamma_0}{4} e^{-\frac{k_m^4 2\pi}{k_0  \Gamma_0A_2}}\sqrt{\frac{8\pi k_0}{-\Gamma_0A_2}}
-\left[ 
-\mathrm{erf}\left(\frac{
-\frac{ k_m^2}{k_0} +i\frac{ \Gamma_0 A_2}{4k_0} z }{\sqrt{\frac{-\Gamma_0A_2}{2 k_0}}} \right)
-+\mathrm{erf}\left(\frac{
-\frac{ k_m^2}{k_0} -i\frac{ \Gamma_0 A_2}{4k_0} z }{\sqrt{\frac{-\Gamma_0A_2}{2 k_0}}} \right)
-\right]_{z= \frac{\pi k_0 }{k_m^2} }^{z= \frac{2\pi k_0 }{k_m^2} }
-\, . \label{eq:idx01}
+    \frac{I_d(\mathbf{k}_d,x)}{I_{d,0}}-1& \simeq
+   \frac{
+   -A_r  \mathcal{H}^{(D)}(\mathbf{k}_d)
+   }{
+ % \left[
+   \sqrt{\frac{\Tilde{g_0}^2}{\Gamma_0^2}  +\frac{\mathbf{k}_d^4 }{16k_0^2 \Gamma_0^2}}
+    %\right]^{-1}
+    } 
+    \left[
+    \cos\left( \frac{\mathbf{k}_d^2x }{2k_0}  -\phi(\mathbf{k}_d) \right) 
+   e^{\Tilde{g_0}(x-x_c)}
+   -\cos\left( \frac{\mathbf{k}_d^2x_c }{2k_0}  -\phi(\mathbf{k}_d) \right) 
+    \right]
+    \, , \label{eq:idf} \\
+    A_r &= \int \frac{d^Dk_s}{(2\pi)^D}    \alpha_\mathrm{r}(\mathbf{k}_s) \, .\label{eq:ar}\\
+    \phi(\mathbf{k}) &= \arctan \left(  \frac{\mathbf{k}^2}{4k_0\Tilde{g_0}}\right)\, . \label{eq:phi}
 \end{align}
 \end{widetext}
-Figure \ref{fig:gx1} illustrates $A(x_1^-,x_1^+)=I_d(2k_m,x_1^+) / I_d(2k_m,x_1^-) - 1$ in logarithmic scale for $ZT_e/Ti=3$. Note that the dependency of $A(x_1^-,x_1^+)$ on $ZT_e/Ti$ are found to be weak.
-A  large effective gain of the scattered intensity  $\sim 100$ is evidenced for  $T_e<3$ keV and $\Gamma_0<2$ ($D=1$) although it might be overestimated due to  the  Taylor development of Eq. \eqref{eq:g0td}.
+\begin{figure*}[!]
+\begin{tabular}{cc}
+(a) $D=1$, $x=2$ mm
+& (b) $D=2$, $x=2$ mm\\
+\includegraphics[width=0.35\textwidth]{AD1.eps}
+&\includegraphics[width=0.35\textwidth]{AD2.eps}\\
+(c) $D=1$ 
+& (d) $D=2$\\
+\includegraphics[width=0.35\textwidth]{AxkD1.png}
+&\includegraphics[width=0.35\textwidth]{AxkD2.png}
+\end{tabular}
+\caption{ \label{fig:a} }
+\end{figure*}
+Written for  $\mathbf{k}=\mathbf{k}_n(x_0)\equiv \mathbf{k}_{n,o}$ leads to,
+\begin{align}
+    \frac{I_d(\mathbf{k}_{n,o})}{I_{d,0}}-1& =  
+   \frac{\vert g(x_0) \vert  }
+    {\sqrt{g_r(x_0)^2+\left( g_i(x_0) -\frac{\mathbf{k}_{n,o}^2 }{2k_0}\right)^2}} \, . \label{eq:idtdamp}
+\end{align}
+The  above equation is illustrated in Fig. \ref{fig:idk} as black and red circles for $D=1$ and $2$ respectively, showing that the wavevector  $k=k_{n,0}$ agrees very well with the maximum of $I_d$. Moreover a fair agreement between  the scattered intensity as predicted by  Eqs. \eqref{eq:dxidkdf}   and  \eqref{eq:idtdamp}  is obtained for both dimension, although for $D=1$, our approximation fails to capture the peaked value of $ I_d/I_{d,0}\simeq 1.4 $ for $k/k_m\sim 0.3-0.5$. 
+Indeed, using  $k_m^2x_0=212k_0/k_m^2\simeq 2\,\rm mm$, for  one and  two transverse dimensions,  we obtain  $\vert g_r(x_0)x_0 \vert  \sim 10 $  and $\sim 100$ respectively, demonstrating that the linearisation around $x=x_0$ made  while deriving Eq. \eqref{eq:idtd1} is more valid  for $D=2$ than for  $D=1$. It is also confirmed by Fig. \ref{fig:gxk} which presents a faster decrease of $\partial_x I_d$ for  (b) (in $\sim 10k_0/k_m^2$) than for  (a) ($\sim 100k_0/k_m^2$).
 
-%Assuming $g_0$ varies slower than $-\sin( \mathbf{k}^2x/4k_0 ) >0$ in Eq. \eqref{eq:dxidtdf}, 
-\textcolor{red}{!!!!!!}
 
 %\begin{figure}[!]
 %\begin{tabular}{cc}
@@ -473,30 +485,6 @@ A  large effective gain of the scattered intensity  $\sim 100$ is evidenced for 
 %\end{figure}
 %For the case of Fig. \ref{fig:gxk} and  at $x=x_0$, a total of $2(N_\mathrm{max}-N_\mathrm{min}+1) = 422$ growing modes are  found [only 6 of them verifies $0<k_n<0.6k_m$, see (a,b)]. As shown in  Fig. \ref{fig:idk} which illustrates $I_d(x=1, k)/I_{d,0}-1$, the wavevector interval between two neighboring modes decreases as $n^{-1/2}$ [see Eq. \eqref{eq:kn}] so that  most of the modes are located close to $\vert k \vert = 2k_m$. However, after integration over the $x$ coordinate  of Eq. \eqref{eq:dxidkd}, the largest amplitude modes fulfills $\vert k \vert /k_m<0.5$ (see Fig. \ref{fig:idk}).
 
-
-As the  case of interest here,  most of the scattered intensity growth occurs close to the left boundary [$x=x_0$, see Figs. \ref{fig:gxk}(a,b)] if the exponential term of Eq. \eqref{eq:dxidkd}  decreases faster than the $k^2x/k_0$ varies, \emph{i.e.} if $\vert g_r(x_0)k_0/k_m^2\vert  \gg 1$. Under these condition,  one may proceed to a Taylor development of Eq. \eqref{eq:dxidkd} in the vicinity of $x=x_0$ leading to,
-\begin{widetext}
-\begin{align}
-   \partial_x I_d=I_{d,0} \mathcal{H}^{(D)}(\mathbf{k}_d)\vert g(x_0) \vert e^{ g_r(x_0)(x-x_0)} 
-    \cos\left[  \left( g_i(x_0) -\frac{\mathbf{k}_d^2 }{2k_0} \right)(x-x_0)  +\frac{\mathbf{k}_d^2x_0 +\theta_g(x_0)}{2k_0}  \right]\, . \label{eq:idtd1}
-\end{align}
-When  $x$ becomes close to the best focus position (thus $g_r(x_0)(x-x_0)\ll -1$) so that the asymptotic solution of the above quadrature is reached, one yields
-\begin{align}
-    \frac{I_d}{I_{d,0}}-1& =  \mathcal{H}^{(D)}(\mathbf{k}_d)
-   \frac{\vert g(x_0) \vert  }
-    {\sqrt{g_r(x_0)^2+\left( g_i(x_0) -\frac{\mathbf{k}_{n,o}^2 }{2k_0}\right)^2}} 
-    \cos\left( \frac{\mathbf{k}_d^2x_0 }{2k_0}+\theta_g(x_0) -\phi \right) \, , \nonumber \\
-    \phi &= \arctan \left( \frac{g_r(x_0)}{b} \right)\, . \label{eq:idtdf}
-\end{align}
-\end{widetext}
-Written for  $\mathbf{k}=\mathbf{k}_n(x_0)\equiv \mathbf{k}_{n,o}$ leads to,
-\begin{align}
-    \frac{I_d(\mathbf{k}_{n,o})}{I_{d,0}}-1& =  
-   \frac{\vert g(x_0) \vert  }
-    {\sqrt{g_r(x_0)^2+\left( g_i(x_0) -\frac{\mathbf{k}_{n,o}^2 }{2k_0}\right)^2}} \, . \label{eq:idtdamp}
-\end{align}
-The  above equation is illustrated in Fig. \ref{fig:idk} as black and red circles for $D=1$ and $2$ respectively, showing that the wavevector  $k=k_{n,0}$ agrees very well with the maximum of $I_d$. Moreover a fair agreement between  the scattered intensity as predicted by  Eqs. \eqref{eq:dxidkdf}   and  \eqref{eq:idtdamp}  is obtained for both dimension, although for $D=1$, our approximation fails to capture the peaked value of $ I_d/I_{d,0}\simeq 1.4 $ for $k/k_m\sim 0.3-0.5$. 
-Indeed, using  $k_m^2x_0=212k_0/k_m^2\simeq 2\,\rm mm$, for  one and  two transverse dimensions,  we obtain  $\vert g_r(x_0)x_0 \vert  \sim 10 $  and $\sim 100$ respectively, demonstrating that the linearisation around $x=x_0$ made  while deriving Eq. \eqref{eq:idtd1} is more valid  for $D=2$ than for  $D=1$. It is also confirmed by Fig. \ref{fig:gxk} which presents a faster decrease of $\partial_x I_d$ for  (b) (in $\sim 10k_0/k_m^2$) than for  (a) ($\sim 100k_0/k_m^2$).
 
 
 
