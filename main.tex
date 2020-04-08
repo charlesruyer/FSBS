@@ -102,7 +102,7 @@ As will be shown subsequently, no monochromatic approximation can be made regard
 
 For a given set of $k_p$, $k_s$, $\omega_p$ and $\omega_s$, Eq. (12) of  Ref. \cite[]{POF_Drake_1973} shows that  for  a Maxwellian plasma, the plasma response to a drive  takes on 
 \begin{align}
- \frac{ \delta n (\omega_s, k_p,k_s) }{n}  &=   \frac{ -\epsilon_0 E_p(k_p) E_d^\star(k_p-k_s) }{ 4 n_c T_e } \nonumber \\  &\times \alpha_\mathrm{kin}\left(\frac{\omega_s- \mathbf{k}_s\cdot \mathbf{v}_d}{\vert \mathbf{k}_s \vert }\right)   \, ,\label{eq:drake}
+ \frac{ \delta n (\omega_s, k_p,k_s) }{n}  &=   \frac{ -\epsilon_0 E_p(k_p) E_d^\star(k_p-k_s) }{ 2 n_c T_e } \nonumber \\  &\times \alpha_\mathrm{kin}\left(\frac{\omega_s- \mathbf{k}_s\cdot \mathbf{v}_d}{\vert \mathbf{k}_s \vert }\right)   \, ,\label{eq:drake}
  \end{align}
  where, for an ion Debye length $\lambda_{Di}$ that verifies $\vert k_s \lambda_{Di} \vert \ll 1$, %in the case of only one transverse direction ($D=1$), 
  \begin{align}
@@ -110,7 +110,7 @@ For a given set of $k_p$, $k_s$, $\omega_p$ and $\omega_s$, Eq. (12) of  Ref. \c
 \xi_{e/i } &=  \sqrt{ \frac{ m_{e/i } }{ 2T_{e/i }}  } \left( \frac{ -\vert \mathbf{k}_s\vert c^2  }{  2\omega_0 }  - \frac{    \mathbf{k}_s \cdot \mathbf{v}_d }{  \vert \mathbf{k}_s\vert }\right)  \label{eq:xiie}   \,  .
 %\xi_{e/i } &=  \sqrt{ \frac{ m_{e/i } }{ 2T_{e/i }}  } \left( \frac{ -\vert \mathbf{k}_s\vert c^2  }{  2\omega_0 }+\frac{  2\mathbf{k}_{p,\perp}\cdot \mathbf{k}_sc^2 }{  2\vert k_s \vert \omega_0 }  - \frac{    \mathbf{k}_s \cdot \mathbf{v}_d }{  \vert \mathbf{k}_s\vert }\right)  \label{eq:xiie}   \,  .
 \end{align}
-We introduced $Z$, the ion charge number and  $ \mathcal{Z}$, the plasma dispersion function \cite{Fried_Gell-Mann_1960} and its arguments $\xi_{e } $ and $\xi_{i }$, which in turns depend on $T_{e,i}$ and $v_d$, the electron/ion temperature and  drift velocity.
+We introduced $Z$, the ion charge number and  $ \mathcal{Z}$, the plasma dispersion function \cite{Fried_Gell-Mann_1960} and its arguments $\xi_{e } $ and $\xi_{i }$, which in turn depend on $T_{e,i}$ and $v_d$, the electron/ion temperature and  drift velocity.
 
 In order to be combined with the paraxial description of light propagation of Eq. \eqref{eq:parax}, one needs to apply in temporal inverse Fourier transform of Eq. \eqref{eq:drake}. We will account for both stokes $\omega=\omega_s$ and anti-stokes modes $\omega=-\omega_s$ giving 
 \begin{equation}\label{eq:sa}
@@ -119,17 +119,18 @@ In order to be combined with the paraxial description of light propagation of Eq
 
 We may now use $\alpha_\mathrm{kin}(-u) = \alpha^\star_\mathrm{kin}(u) $ if $u$ is real to recast the above formula as 
 \begin{align}
-\frac{ \delta n (t,\mathbf{k}_p,\mathbf{k}_s ) }{n}  &=   \frac{ -\epsilon_0 E_p(\mathbf{k}_p) E_d^\star(\mathbf{k}_p-\mathbf{k}_s)  }{ 2 v_g n_c T_e } 
+\frac{ \delta n (t,\mathbf{k}_p,\mathbf{k}_s ) }{n}  &=   \frac{ -\epsilon_0 E_p(\mathbf{k}_p) E_d^\star(\mathbf{k}_p-\mathbf{k}_s)  }{ v_g n_c T_e } 
  \Re \left[ \alpha_\mathrm{kin}  e^{ i\omega_s(\mathbf{k}_s) t} \right]  \, .\label{eq:drakef}
 \end{align}
 
 Note that the term inside the real part only depends on $k_s$:   a summation of the above relation over $k_p$ results, using Eq. \eqref{eq:id}, in  
 \begin{align}
-\frac{ \delta n (t,\mathbf{k}_s ) }{n}  &=   \frac{ -I_d(\mathbf{k}_s) }{ 2 v_g n_c T_e } 
+\frac{ \delta n (t,\mathbf{k}_s ) }{n}  &=   \frac{ -I_d(\mathbf{k}_s) }{ v_g n_c T_e } 
  \Re \left( \alpha_\mathrm{kin}   \right)  
  %+ \mathcal{N}(t,\mathbf{k}_s)
  \, .\label{eq:drakef}
 \end{align}
+\textcolor{red}{pb facteur 2}
 %We added to the above equation a seed term, $\mathcal{N}$, that could either come from thermal fluctuations or from an not fully controlled plasma initial condition.  
 \begin{figure*}
 \begin{tabular}{cc}
